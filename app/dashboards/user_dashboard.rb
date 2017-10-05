@@ -43,10 +43,10 @@ class UserDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
-    :apartment,
     :id,
-    :email,
-    :encrypted_password,
+    :name,
+    :last_name,
+    :apartment
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -55,17 +55,6 @@ class UserDashboard < Administrate::BaseDashboard
     :apartment,
     :id,
     :email,
-    :encrypted_password,
-    :reset_password_token,
-    :reset_password_sent_at,
-    :remember_created_at,
-    :sign_in_count,
-    :current_sign_in_at,
-    :last_sign_in_at,
-    :current_sign_in_ip,
-    :last_sign_in_ip,
-    :created_at,
-    :updated_at,
     :name,
     :last_name,
     :gender,
@@ -78,7 +67,7 @@ class UserDashboard < Administrate::BaseDashboard
     :hobbies,
     :owner,
     :active,
-    :admin,
+    :admin
   ].freeze
 
   # FORM_ATTRIBUTES

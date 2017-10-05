@@ -39503,3 +39503,45 @@ Processing by PagesController#show as HTML
 Completed 200 OK in 100ms (Views: 99.0ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for 127.0.0.1 at 2017-10-05 15:42:06 -0500
+Processing by PagesController#show as HTML
+  Parameters: {"page"=>"home"}
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (0.7ms)
+  Rendered application/_sidebar.html.erb (1.5ms)
+  Rendered application/_footer.html.erb (0.3ms)
+Completed 200 OK in 57ms (Views: 56.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2017-10-05 15:42:07 -0500
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  [1m[36mHobby Load (0.4ms)[0m  [1m[34mSELECT "hobbies".* FROM "hobbies"[0m
+  [1m[36mApartment Load (0.8ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+  Rendered users/registrations/new.html.erb within layouts/application (23.4ms)
+  Rendered application/_sidebar.html.erb (1.6ms)
+  Rendered application/_footer.html.erb (0.4ms)
+Completed 200 OK in 108ms (Views: 106.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2017-10-05 15:42:12 -0500
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  [1m[36mHobby Load (0.2ms)[0m  [1m[34mSELECT "hobbies".* FROM "hobbies"[0m
+  [1m[36mApartment Load (0.5ms)[0m  [1m[34mSELECT "apartments".* FROM "apartments"[0m
+  Rendered users/registrations/new.html.erb within layouts/application (21.9ms)
+  Rendered application/_sidebar.html.erb (1.6ms)
+  Rendered application/_footer.html.erb (0.3ms)
+Completed 200 OK in 116ms (Views: 114.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-10-05 15:42:14 -0500
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered /Users/user/.rvm/gems/ruby-2.4.0/gems/devise-4.3.0/app/views/devise/shared/_links.html.erb (0.9ms)
+  Rendered users/sessions/new.html.erb within layouts/application (6.3ms)
+  Rendered application/_sidebar.html.erb (1.8ms)
+  Rendered application/_footer.html.erb (0.4ms)
+Completed 200 OK in 94ms (Views: 92.8ms | ActiveRecord: 0.0ms)
+
+
