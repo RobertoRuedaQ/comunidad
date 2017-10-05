@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Lugar:</strong>
+  <%= @common_area.place %>
+</p>
+
+<p>
+  <strong>Fecha:</strong>
+  <%= @common_area.date %>
+</p>
+
+<p>
+  <strong>Hora de inicio:</strong>
+  <%= @common_area.start_hour %>
+</p>
+
+<p>
+  <strong>Hora final:</strong>
+  <%= @common_area.end_hour %>
+</p>
+
+<p>
+  <strong>Usuario:</strong>
+  <%= @common_area.user %>
+</p>
+
+<%= link_to 'Editar', edit_common_area_path(@common_area) %> |
+<%= link_to 'Regresar', common_areas_path %>

@@ -1,0 +1,41 @@
+<%= form_with(model: child, local: true) do |form| %>
+  <% if child.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(child.errors.count, "error") %> prohibited this child from being saved:</h2>
+
+      <ul>
+      <% child.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name, t("Nombre") %>
+    <%= form.text_field :name, id: :child_name, class:"form-control" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :last_name, t("Apellido") %>
+    <%= form.text_field :last_name, id: :child_last_name, class:"form-control" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :day_of_birth, t('fecha de nacimiento') %>
+    <%= form.date_select :day_of_birth, id: :child_day_of_birth %>
+  </div>
+
+  <div class="field">
+    <%= form.label :gender, t('Género')%><br />
+    <%= form.select :gender, ['Masculino', 'Femenino'], include_blank: true %>
+  </div>
+
+  <div class="field">
+    <%= form.hidden_field :apartment_id, value: current_user.apartment.id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit 'Crear niño', class: 'btn btn-default' %>
+  </div>
+<% end %>

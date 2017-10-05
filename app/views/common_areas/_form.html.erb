@@ -1,0 +1,41 @@
+<%= form_with(model: common_area, local: true) do |form| %>
+  <% if common_area.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(common_area.errors.count, "error") %> prohibited this common_area from being saved:</h2>
+
+      <ul>
+      <% common_area.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :place, t('Lugar') %>
+    <%= form.text_field :place, id: :common_area_place, class:"form-control" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :date, t('Fecha') %>
+    <%= form.date_select :date, id: :common_area_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :start_hour, t('Hora de inicio') %>
+    <%= form.time_select :start_hour, id: :common_area_start_hour %>
+  </div>
+
+  <div class="field">
+    <%= form.label :end_hour, t('Hora de cierre') %>
+    <%= form.time_select :end_hour, id: :common_area_end_hour %>
+  </div>
+
+  <div class="field">
+    <%= form.hidden_field :user_id, value: current_user.id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit 'Enviar solicitud', class: 'btn btn-default' %>
+  </div>
+<% end %>

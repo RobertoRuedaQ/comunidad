@@ -1,0 +1,95 @@
+<div class="log-w3">
+  <div class="w3layouts-main">
+      <h2>Registro de usuario</h2>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= devise_error_messages! %>
+
+    <div class="field">
+      <%= f.label :email, t('Correo electrónico') %><br />
+      <%= f.email_field :email, autofocus: true, class: "form-control ggg" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :password, t('Contraseña')%>
+      <% if @minimum_password_length %>
+      <em>( mínimo <%= @minimum_password_length %> caracteres)</em>
+      <% end %><br />
+      <%= f.password_field :password, autocomplete: "off",class: "form-control ggg" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :password_confirmation, t('Confirmar Contraseña')%><br />
+      <%= f.password_field :password_confirmation, autocomplete: "off",class: "form-control ggg" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :name, t('Nombre')%><br />
+      <%= f.text_field :name,class: "form-control ggg"%>
+    </div>
+
+    <div class="field">
+      <%= f.label :last_name, t('Apellido')%><br />
+      <%= f.text_field :last_name,class: "form-control ggg"%>
+    </div>
+
+    <div class="field">
+      <%= f.label :document_type, t('Tipo de Documento')%><br />
+      <%= f.select :document_type, ['Cédula', 'Cédula de extranjería', 'Pasaporte', 'NIT'], include_blank: true%>
+    </div>
+
+    <div class="field">
+      <%= f.label :document_id, t('Número de documento')%><br />
+      <%= f.number_field :document_id, class: "form-control ggg"%>
+    </div>
+
+    <div class="field">
+      <%= f.label :gender, t('Género')%><br />
+      <%= f.select :gender, ['Masculino', 'Femenino'], include_blank: true%>
+    </div>
+
+    <div class="field">
+      <%= f.label :cellphone, t('Celular')%><br />
+      <%= f.number_field :cellphone,class: "form-control ggg"%>
+    </div>
+
+    <div class="field">
+      <%= f.label :day_of_birth, t('Fecha de nacimiento')%><br />
+      <%= f.date_select :day_of_birth, start_year: 1930, end_year: Date.today.year - 18 %>
+    </div>
+
+    <div class="field">
+      <%= f.label :profession, t('Profesión')%><br />
+      <%= f.text_field :profession, class: "form-control ggg"%>
+    </div>
+
+    <div class="field">
+      <%= f.label :offer_services, t('¿Ofrecería sus servicios a la comunidad?')%>
+      <%= f.check_box :offer_services, class: "checkbox"%>
+    </div>
+
+    <div class="field">
+      <%= f.label :hobbies, t('Intereses')%><br />
+      <%= f.collection_check_boxes :hobbies, Hobby.all, :name, :name do |b|%>
+      <%= b.label  %>
+      <%= b.check_box %>
+      <%end %>
+      
+    </div>
+
+    <div class="field">
+      <%= f.label :owner, t('¿Es propietario del inmueble?')%>
+      <%= f.check_box :owner, class: "checkbox"%>
+    </div>
+
+    <div class="field">
+      <%= f.label :apartment_id, t('Apartamento')%><br />
+      <%= f.collection_select :apartment_id, Apartment.all, :id, :apto, prompt: "Escoge apartamento" %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "Registrarse",class: 'btn btn-default' %>
+    </div>
+  <% end %>   
+  </div>
+ </div> 
+

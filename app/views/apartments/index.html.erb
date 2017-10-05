@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Apartamentos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Number</th>
+      <th>Block</th>
+      <th>Parking lots</th>
+      <th>Bikes parking</th>
+      <th>Area</th>
+      <th>Werehouse</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @apartments.each do |apartment| %>
+      <tr>
+        <td><%= apartment.number %></td>
+        <td><%= apartment.block %></td>
+        <td><%= apartment.parking_lots %></td>
+        <td><%= apartment.bikes_parking %></td>
+        <td><%= apartment.area %></td>
+        <td><%= apartment.werehouse %></td>
+        <td><%= link_to 'Mostrar', apartment %></td>
+        <td><%= link_to 'Editar', edit_apartment_path(apartment) %></td>
+        <td><%= link_to 'Borrar', apartment, method: :delete, data: { confirm: 'Estas seguro?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Crear un apartamento', new_apartment_path %>

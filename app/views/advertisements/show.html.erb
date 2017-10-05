@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Título:</strong>
+  <%= @advertisement.tittle %>
+</p>
+
+<p>
+  <strong>Descripción:</strong>
+  <%= @advertisement.description %>
+</p>
+
+<p>
+  <strong>Valor:</strong>
+  <%= @advertisement.amount %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= image_tag(@advertisement.imagen_url, :width => 600, :height => 600) if @advertisement.imagen.present? %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @advertisement.user.name %> <%= @advertisement.user.last_name %>
+  <%= @advertisement.user.cellphone %>
+  <%= @advertisement.user.email %>
+</p>
+
+<%= link_to 'Editar', edit_advertisement_path(@advertisement) %> |
+<%= link_to 'Regresar', advertisements_path %>

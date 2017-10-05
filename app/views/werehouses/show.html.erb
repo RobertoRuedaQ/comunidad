@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @werehouse.name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @werehouse.last_name %>
+</p>
+
+<p>
+  <strong>Document:</strong>
+  <%= @werehouse.document_id %>
+</p>
+
+<p>
+  <strong>Arl:</strong>
+  <%= @werehouse.ARL %>
+</p>
+
+<%= link_to 'Editar', edit_werehouse_path(@werehouse) %> |
+<%= link_to 'Regresar', werehouses_path %>

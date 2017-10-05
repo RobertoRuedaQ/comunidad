@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Título:</strong>
+  <%= @newsletter.tittle %>
+</p>
+
+<p>
+  <strong>Archivo:</strong>
+  <%= @newsletter.file %>
+</p>
+
+<%= link_to 'Editar', edit_newsletter_path(@newsletter) %> |
+<%= link_to 'Regresar', newsletters_path %>

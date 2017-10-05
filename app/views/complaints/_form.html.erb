@@ -1,0 +1,41 @@
+<%= form_with(model: complaint, local: true) do |form| %>
+  <% if complaint.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(complaint.errors.count, "error") %> prohibited this complaint from being saved:</h2>
+
+      <ul>
+      <% complaint.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :category, t('Tipo') %>
+    <%= form.select :category,['Petición', 'Queja', 'Reclamo', 'Sugerencia'], include_blank: true %>
+  </div>
+
+  <div class="field">
+    <%= form.label :topic, t('Asunto') %>
+    <%= form.select :topic,['Vecino', 'Personal Aseo', 'Personal de vigilancia', 'Areas comunes', 'Salón social', 'Piscina', 'Turco', 'Sauna', 'GYM', 'Parqueaderos', 'BBQ', 'Parque'], include_blank: true %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description, t('Descripción') %>
+    <%= form.text_area :description, id: :complaint_description, class:"form-control" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :imagen, t('Imagen') %>
+    <%= form.file_field :imagen %>
+  </div>
+
+  <div class="field">
+    <%= form.hidden_field :apartment_id, value: current_user.apartment.id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit 'Enviar', class: 'btn btn-default' %>
+  </div>
+<% end %>

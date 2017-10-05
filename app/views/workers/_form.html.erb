@@ -1,0 +1,43 @@
+<%= form_with(model: worker, local: true) do |form| %>
+  <% if worker.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(worker.errors.count, "error") %> prohibited this worker from being saved:</h2>
+
+      <ul>
+      <% worker.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name, t('Nombre') %>
+    <%= form.text_field :name, id: :worker_name, class:"form-control" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :last_name, t('Apellido') %>
+    <%= form.text_field :last_name, id: :worker_last_name, class:"form-control" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ARL %>
+    <%= form.select :ARL,['Positiva', 'Bolivar', 'Aurora', 'Liberty', 'Maphre', 'Colmena', 'Alfa', 'Colpatria', 'Equidad', 'Sura'], include_blank: true %>
+  </div>
+
+
+  <div class="field">
+    <%= form.label :role, t('Función') %>
+    <%= form.select :role,['Celador', 'Administrativo', 'Aseo'], include_blank: true %>
+  </div>
+
+  <div class="field">
+    <%= form.label :memo %>
+    <%= form.text_area :memo, id: :worker_memo, class:"form-control" %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit 'Crear empleado', class: 'btn btn-default' %>
+  </div>
+<% end %>

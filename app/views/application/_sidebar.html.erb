@@ -1,0 +1,78 @@
+<aside>
+    <div id="sidebar" class="nav-collapse">
+      <!-- sidebar menu start-->
+      <div class="leftside-navigation">
+        <ul class="sidebar-menu" id="nav-accordion">
+          <li>
+            <%= link_to root_path do %>
+              <i class="fa fa-home"></i> Inicio
+            <% end %>
+          </li>
+          <li>
+            <%= link_to family_path do %>
+              <i class="fa fa-users"></i> Familia
+            <% end %>
+          </li>
+            <% if current_user && current_user.active%>
+              <li>
+                <%= link_to advertisements_path do %>
+                  <i class="fa-newspaper-o"></i> Clasificados
+                <% end %>
+              </li>
+              <li>
+                <%= link_to common_areas_path do %>
+                  <i class="fa fa-dashboard"></i> Áreas Comunes
+                <% end %>
+              </li>
+              <li>
+                <%= link_to new_complaint_path do %>
+                  <i class="fa fa-edit"></i> Quejas y Sugerencias
+                <% end %>
+              </li>
+                <li>
+                  <%if current_user && current_user.active&&current_user.owner %>
+                    <%= link_to decisions_path do %>
+                      <i class="fa fa-check-square-o"></i> Votación
+                    <% end %>
+                    </li>
+                      <%if current_user && current_user.active&&current_user.admin %>
+                      <li>
+                        <%= link_to users_path do %>
+                          <i class="fa fa-address-book-o"></i> Usuarios
+                        <% end %>
+                      </li>
+                      <%end %>
+                  <%end %>
+            <%end %>
+        </ul>  
+
+        </br>
+      <ul class="sidebar-menu" id="nav-accordion">
+        <% if user_signed_in? %>
+          <li>        
+            <%= link_to edit_user_registration_path do %>
+              <span class="fa  fa-user"></span> Hola <%= current_user.name %>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to destroy_user_session_path, method: :delete do %>
+              <span class="fa fa-sign-out">Salir</span>
+            <%end%>
+          </li>
+        <% else %>
+          <li>        
+            <%= link_to new_user_registration_path do %>
+              <span class="fa fa-dashboard"></span> Registrarse
+            <% end %>
+          </li>
+          <li>
+            <%= link_to  new_user_session_path do %>
+              <span class=" fa-sign-in"></span> Iniciar sesión
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+        <!-- sidebar menu end-->
+    </div>
+  </div>
+</aside>

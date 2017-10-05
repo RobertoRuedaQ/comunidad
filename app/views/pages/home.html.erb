@@ -1,0 +1,7 @@
+<%if current_user %>
+	<% if current_user.active %>
+		<%=  @newsletters %>
+	<%else %>
+		<p>Acercate a la administración para que puedas aprovechar esta app.</p>
+	<%end %>
+<%end %>

@@ -1,0 +1,36 @@
+<%= form_with(model: vehicle, local: true) do |form| %>
+  <% if vehicle.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(vehicle.errors.count, "error") %> prohibited this vehicle from being saved:</h2>
+
+      <ul>
+      <% vehicle.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :category, t('Categoría') %>
+    <%= form.select :category,['automovil', 'motocicleta'] %>
+  </div>
+
+  <div class="field">
+    <%= form.label :plate, t('Placa') %>
+    <%= form.text_field :plate, id: :vehicle_plate, class:"form-control" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :brand, t('Marca') %>
+    <%= form.text_field :brand, id: :vehicle_brand, class:"form-control" %>
+  </div>
+
+  <div class="field">
+    <%= form.hidden_field :apartment_id, value: current_user.apartment.id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit 'Crear vehículo', class: 'btn btn-default' %>
+  </div>
+<% end %>

@@ -1,0 +1,31 @@
+<%= form_with(model: pet, local: true) do |form| %>
+  <% if pet.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(pet.errors.count, "error") %> prohibited this pet from being saved:</h2>
+
+      <ul>
+      <% pet.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :breed, t('Raza') %>
+    <%= form.select :breed, ['Perro', 'Gato', 'Otros'], include_blank: true %>
+  </div>
+
+  <div class="field">
+    <%= form.label :name, t('Nombre') %>
+    <%= form.text_field :name, id: :pet_name, class:"form-control" %>
+  </div>
+
+  <div class="field">
+    <%= form.hidden_field :apartment_id, value: current_user.apartment.id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit 'Enviar', class: 'btn btn-default' %>
+  </div>
+<% end %>

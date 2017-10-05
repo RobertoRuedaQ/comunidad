@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @worker.name %>
+</p>
+
+<p>
+  <strong>Apellido:</strong>
+  <%= @worker.last_name %>
+</p>
+
+<p>
+  <strong>Arl:</strong>
+  <%= @worker.ARL %>
+</p>
+
+<p>
+  <strong>Función:</strong>
+  <%= @worker.role %>
+</p>
+
+<p>
+  <strong>Memo:</strong>
+  <%= @worker.memo %>
+</p>
+
+<%= link_to 'Editar', edit_worker_path(@worker) %> |
+<%= link_to 'Regresar', workers_path %>

@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Tipo:</strong>
+  <%= @complaint.category %>
+</p>
+
+<p>
+  <strong>Asunto:</strong>
+  <%= @complaint.topic %>
+</p>
+
+<p>
+  <strong>Descripción:</strong>
+  <%= @complaint.description %>
+</p>
+
+<p>
+  <strong>Respuesta:</strong>
+  <%= @complaint.answer %>
+</p>
+
+<p>
+  <strong>Resuelto?:</strong>
+  <%= @complaint.solved %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= image_tag(@complaint.imagen_url, :width => 600, :height => 600) if @complaint.imagen.present? %>
+</p>
+
+<p>
+  <strong>Apartmento:</strong>
+  <%= @complaint.apartment.apto %>
+</p>
+
+<%= link_to 'Editar', edit_complaint_path(@complaint) %> |
+<%= link_to 'Regresar', complaints_path %>

@@ -1,0 +1,41 @@
+<%= form_with(model: advertisement, local: true, :html => {:multipart => true}) do |form| %>
+  <% if advertisement.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(advertisement.errors.count, "error") %> prohibited this advertisement from being saved:</h2>
+
+      <ul>
+      <% advertisement.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :tittle, t('Título') %>
+    <%= form.text_field :tittle, id: :advertisement_tittle, class: "form-control ggg" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description, t('Descripción') %>
+    <%= form.text_area :description, id: :advertisement_description, class: "form-control ggg" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :amount, t('Valor') %>
+    <%= form.number_field :amount, id: :advertisement_amount, class: "form-control ggg" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :imagen, t('Imagen') %>
+    <%= form.file_field :imagen, id: :advertisement_image %>
+  </div>
+
+  <div class="field">
+    <%= form.hidden_field :user_id, value: current_user.id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit class: "btn btn-info" %>
+  </div>
+<% end %>

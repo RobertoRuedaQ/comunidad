@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Quejas y reclamos</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Tipo</th>
+      <th>Descripción</th>
+      <th>Respuesta</th>
+      <th>Resuelto?</th>
+      <th>Apartmento</th>
+      <th>Imagen</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @complaints.each do |complaint| %>
+      <tr>
+        <td><%= complaint.category %></td>
+        <td><%= complaint.description %></td>
+        <td><%= complaint.answer %></td>
+        <td><%= complaint.solved %></td>
+        <td><%= complaint.apartment.apto %></td>
+        <td><%= image_tag(complaint.imagen_url, :width => 200, :height => 200) if complaint.imagen.present? %></td>
+        <td><%= link_to 'Mostrar', complaint %></td>
+        <td><%= link_to 'Editar', edit_complaint_path(complaint) %></td>
+        <td><%= link_to 'Borrar', complaint, method: :delete, data: { confirm: 'Estas seguro?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Crear una nueva queja', new_complaint_path %>

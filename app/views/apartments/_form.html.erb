@@ -1,0 +1,47 @@
+<%= form_with(model: apartment, local: true) do |form| %>
+  <% if apartment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(apartment.errors.count, "error") %> prohibited this apartment from being saved:</h2>
+
+      <ul>
+      <% apartment.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :number, t('Número') %>
+    <%= form.text_field :number, id: :apartment_number, class:"form-control" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :block, t('Bloque') %>
+    <%= form.text_field :block, id: :apartment_block, class:"form-control" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :parking_lots, t('Parqueadero') %>
+    <%= form.text_field :parking_lots, id: :apartment_parking_lots, class:"form-control" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :bikes_parking, t('Parqueadero de Bicicleta') %>
+    <%= form.text_field :bikes_parking, id: :apartment_bikes_parking, class:"form-control" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :area, t('Área') %>
+    <%= form.text_field :area, id: :apartment_area, class:"form-control" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :werehouse_id %>
+    <%= form.text_field :werehouse_id, id: :apartment_werehouse_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit 'Crear apartamento', class: 'btn btn-default' %>
+  </div>
+<% end %>

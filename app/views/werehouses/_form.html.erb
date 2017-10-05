@@ -1,0 +1,38 @@
+<%= form_with(model: werehouse, local: true) do |form| %>
+  <% if werehouse.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(werehouse.errors.count, "error") %> prohibited this werehouse from being saved:</h2>
+
+      <ul>
+      <% werehouse.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name, t('Nombre') %>
+    <%= form.text_field :name, id: :werehouse_name, class:"form-control"%>
+  </div>
+
+  <div class="field">
+    <%= form.label :last_name, t('Apellido') %>
+    <%= form.text_field :last_name, id: :werehouse_last_name, class:"form-control" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :document_id, t('Cédula') %>
+    <%= form.number_field :document_id, id: :werehouse_document_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ARL %>
+    <%= form.select :ARL,['Positiva', 'Bolivar', 'Aurora', 'Liberty', 'Maphre', 'Colmena', 'Alfa', 'Colpatria', 'Equidad', 'Sura'], include_blank: true %>
+  </div>
+
+
+  <div class="actions">
+    <%= form.submit 'Enviar', class: 'btn btn-default' %>
+  </div>
+<% end %>

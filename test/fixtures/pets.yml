@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  breed: MyString
+  name: MyString
+  apartment: one
+
+two:
+  breed: MyString
+  name: MyString
+  apartment: two
