@@ -34,6 +34,7 @@
     .wrapper img{
       width: 75%;
       position: relative;
+      margin-left: 15%;
     }
 }
 
@@ -157,6 +158,7 @@
     .wrapper img{
       width: 75%;
       position: relative;
+      margin-left: 15%;
     }
 
 }
@@ -221,6 +223,7 @@
     .wrapper img{
       position: relative;
       width: 75%;
+      margin-left: 15%;
     }
 }
 
