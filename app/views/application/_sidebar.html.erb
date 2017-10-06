@@ -16,7 +16,7 @@
             <% if current_user && current_user.active%>
               <li>
                 <%= link_to advertisements_path do %>
-                  <i class="fa-newspaper-o"></i> Clasificados
+                  <i class="fa fa-newspaper-o"></i> Clasificados
                 <% end %>
               </li>
               <li>
@@ -51,7 +51,7 @@
         <% if user_signed_in? %>
           <li>        
             <%= link_to edit_user_registration_path do %>
-              <span class="fa  fa-user"></span> Hola <%= current_user.name %>
+              <span class="fa fa-user"></span> Hola <%= current_user.name %>
             <% end %>
           </li>
           <li>
