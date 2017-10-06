@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   belongs_to :apartment
   has_many :hobbies
+  has_many :chats
   
   validates :email, :name, :last_name, :gender, :cellphone, :day_of_birth, :apartment_id, presence: true 
   validates :cellphone, numericality: true
