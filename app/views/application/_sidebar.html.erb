@@ -35,13 +35,18 @@
                       <i class="fa fa-check-square-o"></i> Votación
                     <% end %>
                     </li>
-                      <%if current_user && current_user.active&&current_user.admin %>
+                  <%end %>
+                  <%if current_user && current_user.active &&current_user.admin %>
                       <li>
                         <%= link_to users_path do %>
                           <i class="fa fa-address-book-o"></i> Usuarios
                         <% end %>
                       </li>
-                      <%end %>
+                      <li>
+                        <%= link_to new_newsletter_path do %>
+                          <i class="fa fa-address-book-o"></i> Anuncios
+                        <% end %>
+                      </li>
                   <%end %>
             <%end %>
         </ul>  
