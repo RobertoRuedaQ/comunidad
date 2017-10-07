@@ -38,11 +38,6 @@
                   <%end %>
                   <%if current_user && current_user.active &&current_user.admin %>
                       <li>
-                        <%= link_to users_path do %>
-                          <i class="fa fa-address-book-o"></i> Usuarios
-                        <% end %>
-                      </li>
-                      <li>
                         <%= link_to new_newsletter_path do %>
                           <i class="fa fa-address-book-o"></i> Anuncios
                         <% end %>
