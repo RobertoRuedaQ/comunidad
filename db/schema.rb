@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171011143116) do
+ActiveRecord::Schema.define(version: 20171011165901) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -97,11 +97,6 @@ ActiveRecord::Schema.define(version: 20171011143116) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "hobbies_users", id: false, force: :cascade do |t|
-    t.bigint "hobby_id", null: false
-    t.bigint "user_id", null: false
-  end
-
   create_table "newsletters", force: :cascade do |t|
     t.string "tittle"
     t.string "file"
@@ -116,6 +111,15 @@ ActiveRecord::Schema.define(version: 20171011143116) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["apartment_id"], name: "index_pets_on_apartment_id"
+  end
+
+  create_table "user_hobbies", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "hobby_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["hobby_id"], name: "index_user_hobbies_on_hobby_id"
+    t.index ["user_id"], name: "index_user_hobbies_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -203,5 +207,7 @@ ActiveRecord::Schema.define(version: 20171011143116) do
   add_foreign_key "common_areas", "users"
   add_foreign_key "complaints", "apartments"
   add_foreign_key "pets", "apartments"
+  add_foreign_key "user_hobbies", "hobbies"
+  add_foreign_key "user_hobbies", "users"
   add_foreign_key "vehicles", "apartments"
 end

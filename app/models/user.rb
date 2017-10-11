@@ -5,8 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   belongs_to :apartment
 
-  has_many :hobbies, through: :userhobby
-  serialize :hobbies
+  has_many :user_hobbies
+  has_many :hobbies, through: :user_hobbies
   has_many :chats
 
   

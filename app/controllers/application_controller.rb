@@ -9,8 +9,8 @@ class ApplicationController < ActionController::Base
 
   protected
   def configure_permitted_parameters
-  	devise_parameter_sanitizer.permit(:sign_up, keys: [:email, :name,:last_name,:gender,:document_type,:document_id,:cellphone,:day_of_birth,:profession,:offer_services,hobbies_ids:[],:owner,:active,:admin, :apartment_id])
-    devise_parameter_sanitizer.permit(:user_update, keys: [:email, :name,:last_name,:gender,:document_type,:document_id,:cellphone,:day_of_birth,:profession,:offer_services,hobbies_ids:[],:owner,:active,:admin, :apartment_id])
-    devise_parameter_sanitizer.permit(:account_update, keys: [:email, :name,:last_name,:gender,:document_type,:document_id,:cellphone,:day_of_birth,:profession,:offer_services,hobbies_ids:[],:owner,:active,:admin, :apartment_id])
+  	devise_parameter_sanitizer.permit(:sign_up, keys: [:email, :name,:last_name,:gender,:document_type,:document_id,:cellphone,:day_of_birth,:profession,:offer_services,:owner,:active,:admin, :apartment_id,hobbies_ids:[]])
+    devise_parameter_sanitizer.permit(:user_update, keys: [:email, :name,:last_name,:gender,:document_type,:document_id,:cellphone,:day_of_birth,:profession,:offer_services,:owner,:active,:admin, :apartment_id,hobbies_ids:[]])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:email, :name,:last_name,:gender,:document_type,:document_id,:cellphone,:day_of_birth,:profession,:offer_services,:owner,:active,:admin, :apartment_id,hobbies_ids:[]])
   end
 end

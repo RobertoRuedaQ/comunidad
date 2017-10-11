@@ -47,7 +47,7 @@
 
     <div class="field">
       <%= f.label :cellphone, t('Celular')%><br />
-      <%= f.number_field :cellphone,class: "form-control ggg"%>
+      <%= f.number_field :cellphone, class: "form-control ggg"%>
     </div>
 
     <div class="field">
@@ -67,9 +67,9 @@
 
     <div class="field">
       <%= f.label :hobbies, t('Intereses')%><br />
-      <%= f.collection_check_boxes :hobbies_id, Hobby.all, :name, :name do |b|%>
-      <%= b.label  %>
-      <%= b.check_box %>
+      <%= f.collection_check_boxes :hobby_ids, Hobby.all, :name, :name do |b| %>
+        <%= b.label  %>
+        <%= b.check_box %>
       <%end %>
       
     </div>

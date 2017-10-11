@@ -25,26 +25,27 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         <%= image_tag("logo.jpg") %>
       </div>
       <div class="user-info">
-          <% if user_signed_in? %>
-          <p>BIENVENIDO   </p>
-          <%= link_to edit_user_registration_path do %>
-            <%= current_user.name.upcase %> <%= current_user.last_name.upcase %>
-            <%end %>
-          <%else %>
-            <p>No has iniciado sesión</p>
-          <% end %>
-          <div class="sidebar-toggle-box">
-            <div class="fa fa-bars"></div>
-          </div> 
+        <% if user_signed_in? %>
+        <p>BIENVENIDO   </p>
+        <%= link_to edit_user_registration_path do %>
+        <%= current_user.name.upcase %> <%= current_user.last_name.upcase %>
+        <%end %>
+        <%else %>
+        <p>No has iniciado sesión</p>
+        <% end %>
+        <div class="sidebar-toggle-box">
+          <div class="fa fa-bars"></div>
         </div>
+      </div>
     </header>
+    
     <%= render 'sidebar' %>
-      <section id="main-content">
-        <section class="wrapper">
-          <div class="container-data">
-            <%= yield %>
-          </div>
+    <section id="main-content">
+      <section class="wrapper">
+        <div class="container-data">
+          <%= yield %>
+        </div>
       </section>
- <%= javascript_include_tag "application" %>
-</body>
-</html>
+      <%= javascript_include_tag "application" %>
+    </body>
+  </html>
