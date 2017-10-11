@@ -23,12 +23,24 @@
     .media-filter {
         margin: 25px 0;
     }
+    .wrapper{
+      width: 100%;
+      float: none;
+      position: fixed;
+      top: 0px;
+      z-index: 1005;
+    }
+
+    .wrapper img{
+      width: 75%;
+      position: relative;
+      margin-left: 15%;
+    }
 }
 
 @media (min-width: 480px) and (max-width: 767px) {
   .header{
     position: relative! important;
-    margin-top: 80px ! important;
 }
     .merge-header{
         margin-right: 0px !important;
@@ -112,8 +124,8 @@
     }
 
     .lock-wrapper img {
-        width: 140px;
-        height: 140px;
+        width: 80%;
+        height: 80%;
         margin-top: 10px;
     }
 
@@ -135,8 +147,22 @@
         float: left !important;
     }
 
+    .wrapper{
+      width: 100%;
+      float: none;
+      position: relative;
+      top: 0px;
+      z-index: 1005;
+    }
+
+    .wrapper img{
+      width: 75%;
+      position: relative;
+      margin-left: 15%;
+    }
 
 }
+
 @media (max-width:767px){
 
     .fixed-width #container, .fixed-width #container .header {
@@ -144,7 +170,6 @@
     }
 
     #sidebar{
-        margin-left:-240px;
         -webkit-transition:all .3s ease-in-out;
         -moz-transition:all .3s ease-in-out;
         -o-transition:all .3s ease-in-out;
@@ -164,8 +189,8 @@
         padding: 0 20px;
     }
     .lock-wrapper img {
-        width: 140px;
-        height: 140px;
+        width: 80%;
+        height: 80%;
         margin-top: 10px;
     }
     .lock-pwd input {
@@ -187,10 +212,23 @@
         float: left !important;
     }
 
+    .wrapper{
+      width: 100%;
+      float: none;
+      position: relative;
+      top: 0px;
+      z-index: 1005;
+    }
+
+    .wrapper img{
+      position: relative;
+      width: 75%;
+      margin-left: 15%;
+    }
 }
+
 @media (max-width: 479px) {
     body{
-        margin-top:80px !important;
     }
     .header{
         position: relative !important;
@@ -215,9 +253,21 @@
     .top-menu{
         margin-right: 10px;
     }
+
     .wrapper{
         margin-top: 0px;
+        width: 100%;
+        float: none;
+        position: relative;
+        top: 0px;
+        z-index: 1005;
     }
+
+    .wrapper img{
+      width: 75%;
+      position: relative;
+    }
+
     ul.sidebar-menu {
         margin-top: 0px;
     }
@@ -295,8 +345,8 @@
         padding: 0 20px;
     }
     .lock-wrapper img {
-        width: 100px;
-        height: 100px;
+        width: 80px;
+        height: 80px;
         margin-top: -25px;
     }
 
@@ -329,5 +379,3 @@
         display: inline-block;
     }
 }
-
-

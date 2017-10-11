@@ -4,8 +4,11 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   belongs_to :apartment
+
   has_many :hobbies, through: :userhobby
   serialize :hobbies
+  has_many :chats
+
   
   validates :email, :name, :last_name, :gender, :cellphone, :day_of_birth, :apartment_id, presence: true 
   validates :cellphone, numericality: true
