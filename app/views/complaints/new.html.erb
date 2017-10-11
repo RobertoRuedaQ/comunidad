@@ -1,5 +1,12 @@
 <h1>Crear una queja o un reclamo</h1>
 
 <%= render 'form', complaint: @complaint %>
+<div class="col-md-6">
+  <div class="help-box">
+    <%= image_tag('info.png') %>
+    <h2>Nota:</h2>
+    <p>hola mundo</p>
+  </div>
+</div>
 
 <%= link_to 'Regresar', complaints_path %>

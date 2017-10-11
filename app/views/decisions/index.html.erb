@@ -1,7 +1,5 @@
-<p id="notice"><%= notice %></p>
-
 <h1>Votaciones</h1>
-
+<p id="notice"><%= notice %></p>
 <% @decisions.each do |decision| %>
   <div class="container">
     <div class="jumbotron">
@@ -49,6 +47,14 @@
     </div>
   </div>
 <% end %>
+
+<script>
+  $(document).ready(function(){
+    $("a .btn").on("click", function(){
+      $(".col-sm-12 .col-xs-12").hide()
+    })
+  })
+</script>
 
 
 

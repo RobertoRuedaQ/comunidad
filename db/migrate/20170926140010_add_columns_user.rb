@@ -9,7 +9,7 @@ class AddColumnsUser < ActiveRecord::Migration[5.1]
     add_column :users, :day_of_birth, :date
     add_column :users, :profession, :string
     add_column :users, :offer_services, :boolean, default: false
-    add_column :users, :hobbies, :string
+    add_column :users, :hobbies_id, :string
     add_column :users, :owner, :boolean, default: false
     add_column :users, :active, :boolean, default: false
     add_column :users, :admin, :boolean, default: false

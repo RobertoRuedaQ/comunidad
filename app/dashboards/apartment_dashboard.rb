@@ -20,6 +20,7 @@ class ApartmentDashboard < Administrate::BaseDashboard
     block: Field::String,
     parking_lots: Field::String,
     bikes_parking: Field::String,
+    storage: Field::String,
     coefficient: Field::Number.with_options(decimals: 2),
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
@@ -31,12 +32,10 @@ class ApartmentDashboard < Administrate::BaseDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
-    :id,
-    :number,
-    :block,
+    :werehouse,
     :users,
     :children,
-    :complaints
+    :complaints,
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -54,6 +53,7 @@ class ApartmentDashboard < Administrate::BaseDashboard
     :block,
     :parking_lots,
     :bikes_parking,
+    :storage,
     :coefficient,
     :created_at,
     :updated_at,
@@ -74,6 +74,7 @@ class ApartmentDashboard < Administrate::BaseDashboard
     :block,
     :parking_lots,
     :bikes_parking,
+    :storage,
     :coefficient,
   ].freeze
 

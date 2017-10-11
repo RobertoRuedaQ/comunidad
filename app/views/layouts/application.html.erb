@@ -20,37 +20,31 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 </head>
 <body>
   <section id="container">
-    <!--header start-->
     <header class="header fixed-top clearfix">
-      <!--logo start-->
       <div class="brand">
         <%= image_tag("logo.jpg") %>
       </div>
-      <div class="sidebar-toggle-box">
-        <div class="fa fa-bars"></div>
-      </div>
-      <!--logo end-->
+      <div class="user-info">
+          <% if user_signed_in? %>
+          <p>BIENVENIDO   </p>
+          <%= link_to edit_user_registration_path do %>
+            <%= current_user.name.upcase %> <%= current_user.last_name.upcase %>
+            <%end %>
+          <%else %>
+            <p>No has iniciado sesión</p>
+          <% end %>
+          <div class="sidebar-toggle-box">
+            <div class="fa fa-bars"></div>
+          </div> 
+        </div>
     </header>
-    <!--header end-->
-    <!--sidebar start-->
     <%= render 'sidebar' %>
-      <!--sidebar end-->
-
-      <!--main content start-->
       <section id="main-content">
         <section class="wrapper">
-          <%= yield %>
-        </section>
-        
-        <!-- footer -->
-    <%= render 'footer' %>
-        <!-- / footer -->
-        </section>
-<!--main content end-->
+          <div class="container-data">
+            <%= yield %>
+          </div>
       </section>
  <%= javascript_include_tag "application" %>
-<!-- morris JavaScript -->
-
-<!-- //calendar -->
 </body>
 </html>

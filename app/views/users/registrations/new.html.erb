@@ -1,6 +1,4 @@
-<div class="log-w3">
-  <div class="w3layouts-main">
-      <h2>Registro de usuario</h2>
+<h2>Registro de usuario</h2>
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= devise_error_messages! %>
 
@@ -69,7 +67,7 @@
 
     <div class="field">
       <%= f.label :hobbies, t('Intereses')%><br />
-      <%= f.collection_check_boxes :hobbies, Hobby.all, :name, :name do |b|%>
+      <%= f.collection_check_boxes :hobbies_id, Hobby.all, :name, :name do |b|%>
       <%= b.label  %>
       <%= b.check_box %>
       <%end %>
@@ -89,7 +87,5 @@
     <div class="actions">
       <%= f.submit "Registrarse",class: 'btn btn-default' %>
     </div>
-  <% end %>   
-  </div>
- </div> 
+  <% end %> 
 

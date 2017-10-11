@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171002152233) do
+ActiveRecord::Schema.define(version: 20171011143116) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -97,6 +97,11 @@ ActiveRecord::Schema.define(version: 20171002152233) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "hobbies_users", id: false, force: :cascade do |t|
+    t.bigint "hobby_id", null: false
+    t.bigint "user_id", null: false
+  end
+
   create_table "newsletters", force: :cascade do |t|
     t.string "tittle"
     t.string "file"
@@ -135,7 +140,7 @@ ActiveRecord::Schema.define(version: 20171002152233) do
     t.date "day_of_birth"
     t.string "profession"
     t.boolean "offer_services", default: false
-    t.string "hobbies"
+    t.string "hobbies_id", default: [], array: true
     t.boolean "owner", default: false
     t.boolean "active", default: false
     t.boolean "admin", default: false
