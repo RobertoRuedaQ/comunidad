@@ -1,7 +1,7 @@
 class CreateCommonAreas < ActiveRecord::Migration[5.1]
   def change
     create_table :common_areas do |t|
-      t.string :place
+      t.string :title
       t.date :date
       t.time :start_hour
       t.time :end_hour

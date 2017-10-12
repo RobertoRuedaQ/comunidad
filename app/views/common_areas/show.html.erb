@@ -2,7 +2,7 @@
 
 <p>
   <strong>Lugar:</strong>
-  <%= @common_area.place %>
+  <%= @common_area.title %>
 </p>
 
 <p>
@@ -12,17 +12,17 @@
 
 <p>
   <strong>Hora de inicio:</strong>
-  <%= @common_area.start_hour %>
+  <%= @common_area.start_hour.hour %>:<%= @common_area.start_hour.min %>
 </p>
 
 <p>
   <strong>Hora final:</strong>
-  <%= @common_area.end_hour %>
+  <%= @common_area.end_hour.hour %>:<%= @common_area.end_hour.min %>
 </p>
 
 <p>
   <strong>Usuario:</strong>
-  <%= @common_area.user %>
+  <%= @common_area.user.name %> <%= @common_area.user.last_name %>
 </p>
 
 <%= link_to 'Editar', edit_common_area_path(@common_area) %> |

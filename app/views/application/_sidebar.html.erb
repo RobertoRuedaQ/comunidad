@@ -21,18 +21,13 @@
               <% end %>
             </li>
             <li>
-              <%= link_to chats_path do %>
-                <%= image_tag("chat.png") %> CHAT
-              <% end %>
-            </li>
-            <li>
               <%= link_to common_areas_path do %>
                 <%= image_tag("calendario.png") %> ÁREAS COMUNES
               <% end %>
             </li>
             <li>
-              <%= link_to new_complaint_path do %>
-                <%= image_tag("complaints.png") %> QUEJAS & SUGERENCIAS
+              <%= link_to complaints_path do %>
+                <%= image_tag("complaints.png") %> PQRS
               <% end %>
             </li>
             <%if current_user && current_user.active&&current_user.owner %>
@@ -78,7 +73,7 @@
         </li>
         <% end %>
       </ul>
-      <div style="margin-top: 150px;">
+      <div class="logo-CMG">
         <ul class="sidebar-menu">
           <li>
             <%= image_tag("logo_CMG.png", class: "img-cmg") %> <p style="

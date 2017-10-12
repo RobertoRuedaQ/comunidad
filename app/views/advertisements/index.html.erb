@@ -33,12 +33,14 @@
 
   <br>
 
-  <%= link_to 'Crear un nuevo Clasificado', new_advertisement_path %> 
+  <%= link_to new_advertisement_path do%>
+    <%= image_tag('btn-enviar.png') %>
+  <% end %> 
 </div>
 <div class="col-md-6">
   <div class="help-box">
     <%= image_tag('info.png') %>
     <h2>Nota:</h2>
-    <p>hola mundo</p>
+    <p>En este espacio podrás publicar los clasificados para la comunidad, eso que ya no uses, servicios a la comunidad o tus ventas de garaje.</p>
   </div>
 </div>

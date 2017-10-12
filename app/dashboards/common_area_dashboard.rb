@@ -10,7 +10,7 @@ class CommonAreaDashboard < Administrate::BaseDashboard
   ATTRIBUTE_TYPES = {
     user: Field::BelongsTo,
     id: Field::Number,
-    place: Field::String,
+    title: Field::String,
     date: Field::DateTime,
     start_hour: Field::DateTime,
     end_hour: Field::DateTime,
@@ -26,7 +26,7 @@ class CommonAreaDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = [
     :user,
     :id,
-    :place,
+    :title,
     :date,
   ].freeze
 
@@ -35,7 +35,7 @@ class CommonAreaDashboard < Administrate::BaseDashboard
   SHOW_PAGE_ATTRIBUTES = [
     :user,
     :id,
-    :place,
+    :title,
     :date,
     :start_hour,
     :end_hour,
@@ -48,7 +48,7 @@ class CommonAreaDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
     :user,
-    :place,
+    :title,
     :date,
     :start_hour,
     :end_hour,

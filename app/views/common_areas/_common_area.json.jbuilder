@@ -1,2 +1,6 @@
-json.extract! common_area, :id, :place, :date, :start_hour, :end_hour, :user_id, :created_at, :updated_at
-json.url common_area_url(common_area, format: :json)
+json.array!(@common_areas) do |common_area|
+  json.extract! common_area, :id, :title
+  json.start common_area.date
+  json.end common_area.date
+  json.url common_area_url(common_area, format: :json)
+end

@@ -146,17 +146,18 @@
 		</div>
 
 		<div class="col-md-6">
-			<%= link_to new_child_path, class: "btn btn-default btn-sm"  do%>
-				<i class="fa fa-child"></i> Nuevo niño
+			<h1>Crear:</h1>
+			<%= link_to new_child_path do%>
+				<%= image_tag('btn-nino.png') %>
 			<%end%>
-			<%= link_to new_werehouse_path, class: "btn btn-default btn-sm" do%>
-				<i class="fa fa-female"></i> Nueva Empleada
+			<%= link_to new_werehouse_path do%>
+				<%= image_tag('btn-empleado.png') %>
 			<%end %>
-			<%= link_to new_pet_path, class: "btn btn-default btn-sm" do%>
-				<i class="fa fa-paw"></i> Nueva mascota
+			<%= link_to new_pet_path do%>
+				<%= image_tag('btn-mascota.png') %>
 			<%end %>
-			<%= link_to new_vehicle_path, class: "btn btn-default btn-sm" do%>
-				<i class="fa fa-car"></i> Nuevo vehículo
+			<%= link_to new_vehicle_path do%>
+				<%= image_tag('btn-vehiculo.png') %>
 			<%end %>
 		</div>
 	</div>

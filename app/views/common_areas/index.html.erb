@@ -18,28 +18,23 @@
     <tbody>
       <% @common_areas.each do |common_area| %>
         <tr>
-          <td><%= common_area.place %></td>
+          <td><%= common_area.title %></td>
           <td><%= common_area.date %></td>
-          <td><%= common_area.start_hour %></td>
-          <td><%= common_area.end_hour %></td>
-          <td><%= common_area.user.name %></td>
-          <td><%= link_to 'Mostrar', common_area %></td>
-          <td><%= link_to 'Editar', edit_common_area_path(common_area) %></td>
-          <td><%= link_to 'Borrar', common_area, method: :delete, data: { confirm: 'Estás seguro?' } %></td>
+          <td><%= common_area.start_hour.hour %>:<%= common_area.start_hour.min %></td>
+          <td><%= common_area.end_hour.hour %>:<%= common_area.end_hour.min %></td>
+          <td><%= common_area.user.name %> <%= common_area.user.last_name %></td>
         </tr>
       <% end %>
     </tbody>
   </table>
 
   <br>
-  <%= link_to 'Crear una nueva solicitud', new_common_area_path %>
+  <%= link_to new_common_area_path do%>
+    <%= image_tag('solicitud.png') %>
+  <%end %>
 </div>
 
 <div class="col-md-6">
-  <div class="help-box">
-    <%= image_tag('info.png') %>
-    <h2>Nota:</h2>
-    <p>hola mundo</p>
-  </div>
+  <div id="calendar"></div>
 </div>
 

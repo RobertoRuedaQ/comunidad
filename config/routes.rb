@@ -18,6 +18,7 @@ Rails.application.routes.draw do
     resources :vehicles
     resources :werehouses
     resources :workers
+    resources :decisions
 
     root to: "users#index"
   end

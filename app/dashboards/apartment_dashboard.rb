@@ -33,26 +33,26 @@ class ApartmentDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
     :id,
+    :number,
+    :block,
     :users,
     :children,
-    :complaints,
     :pets,
     :vehicles,
-    :werehouses,
-    :number,
-    :block
+    :werehouses
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = [
-    :id,
+    :werehouse,
     :users,
     :children,
     :complaints,
     :pets,
     :vehicles,
     :werehouses,
+    :id,
     :number,
     :block,
     :parking_lots,
@@ -67,6 +67,7 @@ class ApartmentDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
+    :werehouse,
     :users,
     :children,
     :complaints,

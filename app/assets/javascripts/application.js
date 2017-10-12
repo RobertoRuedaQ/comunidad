@@ -16,8 +16,15 @@
 //= require bootstrap
 //= require jquery.dcjqaccordion.2.7
 //= require scripts
+//= require moment 
 //= require jquery.slimscroll
 //= require jquery.nicescroll
 //= require jquery.scrollTo
 //= require rails-ujs
+//= require fullcalendar/fullcalendar
+//= require fullcalendar/locale/es
+
+$('#calendar').fullCalendar({
+	events: '/common_areas.json'
+});
 
