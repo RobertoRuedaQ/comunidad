@@ -4,7 +4,7 @@ class ChatsController < ApplicationController
   # GET /chats
   # GET /chats.json
   def index
-    @chats = Chat.all
+    @chats = Chat.order('created_at DESC')
   end
 
   # GET /chats/1
@@ -27,11 +27,14 @@ class ChatsController < ApplicationController
     @chat = Chat.new(chat_params)
       if @chat.save
         redirect_to chats_path
+
         #format.html { redirect_to @chat, notice: 'Chat was successfully created.' }
         #format.json { render :show, status: :created, location: @chat }
       else
-        format.html { render :new }
+        respond_to do |format|
+        format.html { render :index }
         format.json { render json: @chat.errors, status: :unprocessable_entity }
+        end
       end
   end
 

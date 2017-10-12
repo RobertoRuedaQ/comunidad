@@ -27,7 +27,7 @@ class WorkerDashboard < Administrate::BaseDashboard
     :id,
     :name,
     :last_name,
-    :ARL,
+    :role
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES

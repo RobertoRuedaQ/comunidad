@@ -144,7 +144,7 @@ ActiveRecord::Schema.define(version: 20171011165901) do
     t.date "day_of_birth"
     t.string "profession"
     t.boolean "offer_services", default: false
-    t.string "hobbies_id", default: [], array: true
+    t.string "hobbies_id"
     t.boolean "owner", default: false
     t.boolean "active", default: false
     t.boolean "admin", default: false

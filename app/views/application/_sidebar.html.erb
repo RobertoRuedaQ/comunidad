@@ -8,50 +8,52 @@
             <%= image_tag("home.png") %> INICIO
           <% end %>
         </li>
+        <%if current_user %>
         <li>
           <%= link_to family_path do %>
             <%= image_tag("chat.png") %> FAMILIA
           <% end %>
         </li>
-        <% if current_user && current_user.active%>
-          <li>
-            <%= link_to advertisements_path do %>
-              <%= image_tag("advertisement.png") %> CLASIFICADOS
-            <% end %>
-          </li>
-          <li>
-            <%= link_to chats_path do %>
-              <%= image_tag("chat.png") %> CHAT
-            <% end %>
-          </li>
-          <li>
-            <%= link_to common_areas_path do %>
-              <%= image_tag("calendario.png") %> ÁREAS COMUNES
-            <% end %>
-          </li>
-          <li>
-            <%= link_to new_complaint_path do %>
-              <%= image_tag("complaints.png") %> QUEJAS & SUGERENCIAS
-            <% end %>
-          </li>
-          <%if current_user && current_user.active&&current_user.owner %>
+          <% if current_user && current_user.active%>
             <li>
-              <%= link_to decisions_path do %>
-                <%= image_tag("decision.png") %>VOTACION
-              <% end %>
-            </li>
-          <%end %>
-          <%if current_user && current_user.active&&current_user.admin %>
-            <li>
-              <%= link_to activation_path do %>
-                <%= image_tag("home.png") %> ACTIVAR
+              <%= link_to advertisements_path do %>
+                <%= image_tag("advertisement.png") %> CLASIFICADOS
               <% end %>
             </li>
             <li>
-              <%= link_to new_decision_path do %>
-                <%= image_tag("decision.png") %> CREAR VOTACION
+              <%= link_to chats_path do %>
+                <%= image_tag("chat.png") %> CHAT
               <% end %>
             </li>
+            <li>
+              <%= link_to common_areas_path do %>
+                <%= image_tag("calendario.png") %> ÁREAS COMUNES
+              <% end %>
+            </li>
+            <li>
+              <%= link_to new_complaint_path do %>
+                <%= image_tag("complaints.png") %> QUEJAS & SUGERENCIAS
+              <% end %>
+            </li>
+            <%if current_user && current_user.active&&current_user.owner %>
+              <li>
+                <%= link_to decisions_path do %>
+                  <%= image_tag("decision.png") %>VOTACION
+                <% end %>
+              </li>
+            <%end %>
+            <%if current_user && current_user.active&&current_user.admin %>
+              <li>
+                <%= link_to activation_path do %>
+                  <%= image_tag("home.png") %> ACTIVAR
+                <% end %>
+              </li>
+              <li>
+                <%= link_to new_decision_path do %>
+                  <%= image_tag("decision.png") %> CREAR VOTACION
+                <% end %>
+              </li>
+            <%end %>
           <%end %>
         <%end %>
       </ul>

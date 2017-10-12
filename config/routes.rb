@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   
+
   root to: "pages#show", page:'home'
-  
+  mount ActionCable.server => '/cable'
+
   get "pages/show", page:'family', as: 'family'
   get "pages/show", page:'activation', as: 'activation'
   

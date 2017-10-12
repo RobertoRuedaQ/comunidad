@@ -35,7 +35,7 @@
           <%= form_for :chat do |form| %>
           <div class="panel-footer">
               <div class="input-group">
-                <%= form.text_area :comment, id: :chat_comment, class: "form-control input-sm chat_input", placeholder: "Write your message here..."  %>
+                <%= form.text_area :comment, class: "form-control input-sm chat_input" %>
                   <span class="input-group-btn">
                   <%= form.submit 'enviar', class: "btn btn-primary btn-sm" %>
                   </span>
