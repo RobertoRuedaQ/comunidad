@@ -19,6 +19,7 @@ Rails.application.routes.draw do
     resources :werehouses
     resources :workers
     resources :decisions
+    resources :hobbies
 
     root to: "users#index"
   end

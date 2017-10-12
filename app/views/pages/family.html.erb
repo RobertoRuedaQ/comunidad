@@ -1,7 +1,32 @@
+<!-- botones y texto de info -->
+<div class="row">
+	<div class="col-md-6">
+		<h1>Crear:</h1>
+			<%= link_to new_child_path do%>
+				<%= image_tag('btn-nino.png') %>
+			<%end%>
+			<%= link_to new_werehouse_path do%>
+				<%= image_tag('btn-empleado.png') %>
+			<%end %>
+			<%= link_to new_pet_path do%>
+				<%= image_tag('btn-mascota.png') %>
+			<%end %>
+			<%= link_to new_vehicle_path do%>
+				<%= image_tag('btn-vehiculo.png') %>
+			<%end %>
+	</div>
+	<div class="col-md-6">
+		<div class="help-box">
+    <%= image_tag('info.png') %>
+    <h2>Nota:</h2>
+    <p>hola mundo</p>
+  </div>
+	</div>
+</div>
+
 <% if current_user %>
 <div class="row">
-	<div class="chart_agile">
-		<div class="col-md-6">
+	<div class="col-md-3">
 			<h2>Usuarios del apartamento</h2>
 			<div class="table-responsive">
 				<table class="table table-striped b-t b-light">
@@ -9,7 +34,6 @@
 						<tr>
 						  <th>Nombre</th>
 						  <th>Apellido</th>
-						  <th colspan="3"></th>
 						</tr>
 					</thead>
 					<tbody>
@@ -22,30 +46,25 @@
 					</tbody>
 				</table>
 			</div>
-		</div>
 	</div>
-
-	<div class="chart_agile">
-		<div class="col-md-6">
-				<h2>Niños</h2>
+	<div class="col-md-3">
+		<h2>Niños</h2>
+		<div class="table-responsive">
+			<div class="col-md-4">
 			<table class="table table-striped b-t b-light">
 			  <thead>
 			    <tr>
 			      <th>Nombre</th>
 			      <th>Apellido</th>
-			      <th>Fecha de nacimiento</th>
-			      <th>Género</th>
 
-			      <th colspan="3"></th>
+			      <th>Género</th>
 			    </tr>
 			  </thead>
-
 			  <tbody>
 			    <% current_user.apartment.children.all.each do |child| %>
 			      <tr>
 			        <td><%= child.name %></td>
 			        <td><%= child.last_name %></td>
-			        <td><%= child.day_of_birth %></td>
 			        <td><%= child.gender %></td>
 			        <td><%= link_to 'Show', child %></td>
 			        <td><%= link_to 'Edit', edit_child_path(child) %></td>
@@ -54,14 +73,13 @@
 			    <% end %>
 			  </tbody>
 			</table>
+			</div>
 		</div>
 	</div>
-</div>
-	
-<div class="row">
-	<div class="chart_agile">
-		<div class="col-md-6">
-			<h2>Mascotas</h2>
+	<div class="col-md-3">
+		<h2>Mascotas</h2>
+		<div class="table-responsive">
+			<div class="col-md-4">
 				<table class="table">
 		  		<thead>
 				    <tr>
@@ -70,7 +88,6 @@
 				      <th colspan="3"></th>
 				    </tr>
 			  	</thead>
-
 			  	<tbody>
 			    <% current_user.apartment.pets.each do |pet| %>
 			      <tr>
@@ -83,20 +100,18 @@
 			    	<% end %>
 			  	</tbody>
 				</table>
+			</div>
 		</div>
 	</div>
-
-	<div class="chart_agile">
-		<div class="col-md-6">
-			<h2>Vehiculos</h2> 
-				<table class="table table-striped b-t b-light">
+	<div class="col-md-3">
+		<h2>Vehículos</h2>
+		<div class="table-responsive">
+			<table class="table table-striped b-t b-light">
 				  <thead>
 				    <tr>
 				      <th>Tipo</th>
 				      <th>Placa</th>
 				      <th>Marca</th>
-				      <th>Apartamento</th>
-				      <th colspan="3"></th>
 				    </tr>
 				  </thead>
 					<tbody>
@@ -115,6 +130,7 @@
 		</div>
 	</div>
 </div>
+
 
 
 <div class="row">
@@ -143,22 +159,6 @@
 			    <% end %>
 			  </tbody>
 			</table> 
-		</div>
-
-		<div class="col-md-6">
-			<h1>Crear:</h1>
-			<%= link_to new_child_path do%>
-				<%= image_tag('btn-nino.png') %>
-			<%end%>
-			<%= link_to new_werehouse_path do%>
-				<%= image_tag('btn-empleado.png') %>
-			<%end %>
-			<%= link_to new_pet_path do%>
-				<%= image_tag('btn-mascota.png') %>
-			<%end %>
-			<%= link_to new_vehicle_path do%>
-				<%= image_tag('btn-vehiculo.png') %>
-			<%end %>
 		</div>
 	</div>
 </div>
