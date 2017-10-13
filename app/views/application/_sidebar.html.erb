@@ -17,7 +17,7 @@
           <% if current_user && current_user.active%>
             <li>
               <%= link_to advertisements_path do %>
-                <%= image_tag("advertisement.png") %> CLASIFICADOS
+                <%= image_tag("clasificados.png") %> CLASIFICADOS
               <% end %>
             </li>
             <li>
@@ -51,10 +51,7 @@
             <%end %>
           <%end %>
         <%end %>
-      </ul>
-      </br>
-      <ul class="sidebar-menu" id="nav-accordion">
-        <% if user_signed_in? %>
+        <% if current_user %>
         <li>
           <%= link_to destroy_user_session_path, method: :delete do %>
           <%= image_tag("sign_out.png") %> CERRAR SESION
@@ -68,18 +65,19 @@
         </li>
         <li>
           <%= link_to  new_user_session_path do %>
-          <%= image_tag("iniciar-sesion.png") %> Iniciar sesión
+          <%= image_tag("iniciar-sesion.png") %> INICIAR SESION
           <% end %>
         </li>
         <% end %>
       </ul>
+      </br>
       <div class="logo-CMG">
         <ul class="sidebar-menu">
           <li>
             <%= image_tag("logo_CMG.png", class: "img-cmg") %> <p style="
               color: white;
               margin-left: 15px;
-              font-size: 12px;
+              font-size: 10px;
             ">Todos los derechos reservados</p>
           </li>
         </ul>

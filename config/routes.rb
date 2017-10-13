@@ -1,11 +1,10 @@
 Rails.application.routes.draw do
   
-
-  root to: "pages#show", page:'home'
   mount ActionCable.server => '/cable'
 
+  root to: "pages#show", page:'home'
   get "pages/show", page:'family', as: 'family'
-  get "pages/show", page:'activation', as: 'activation'
+
   
   namespace :admin do
     resources :users

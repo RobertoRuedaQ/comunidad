@@ -23,8 +23,4 @@
 //= require rails-ujs
 //= require fullcalendar/fullcalendar
 //= require fullcalendar/locale/es
-
-$('#calendar').fullCalendar({
-	events: '/common_areas.json'
-});
-
+//= require common_area

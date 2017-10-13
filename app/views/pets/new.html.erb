@@ -1,5 +1,13 @@
-<h1>Nueva mascota</h1>
-
-<%= render 'form', pet: @pet %>
-
-<%= link_to 'Regresar', pets_path %>
+<div class="row">
+	<div class="col-md-6">
+		<h1>Nueva mascota</h1>
+		<%= render 'form', pet: @pet %>
+		<%= link_to 'Regresar', family_path %>
+	</div>
+	<div class="col-md-6">
+		<div class="help-box">
+		<h2> Nota:</h2></p>
+    <p>Es muy importante para nosotros saber que mascota tienes, así podemos ayudarte caso de perdida. También podremos darles regalos sorpresa para sorprenderte.</p>
+  	</div>
+	</div>
+</div>

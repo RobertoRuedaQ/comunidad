@@ -1,13 +1,13 @@
 <%if signed_in? %>
 	<% if current_user.active %>
 		<%=  @newsletters %>
-		<%= image_tag('Bienvenidos-Mediterraneo.jpg') %>
+		<%= image_tag('Bienvenidos-Mediterraneo.png') %>
 	<%else %>
 		<p><h1>Acercate a la administración para que puedas aprovechar esta app.</h1></p>
-		<%= image_tag('Bienvenidos-Mediterraneo.jpg') %>
+		<%= image_tag('Bienvenidos-Mediterraneo.png') %>
 	<%end %>
 	<%else %>
 		<div class="container">
-		<%= image_tag('Registra-Mediterraneo.jpg')%>	
+		<%= image_tag('Bienvenidos-Mediterraneo.png')%>	
 	</div>
 <%end %>

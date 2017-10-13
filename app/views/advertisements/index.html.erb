@@ -1,44 +1,45 @@
-<div class="col-md-6">
-  <h1>Clasificados</h1>
+<div class="row">
+  <div class="col-md-6">
+    <h1>Clasificados</h1>
 
-  <table class="table">
-    <thead>
-      <tr>
-        <th>Título</th>
-        <th>Descripción</th>
-        <th>Valor</th>
-        <th>Imagen</th>
-        <th>Usuario</th>
-        <th colspan="3"></th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @advertisements.each do |advertisement| %>
+    <table class="table">
+      <thead>
         <tr>
-          <td><%= advertisement.tittle %></td>
-          <td><%= advertisement.description %></td>
-          <td><%= advertisement.amount %></td>
-          <td><%= image_tag(advertisement.imagen_url, :width => 200, :height => 200) if advertisement.imagen.present? %></td>
-          <td><%= advertisement.user.last_name %> <%= advertisement.user.name %></td>
-          <td><%= link_to 'Mostrar', advertisement %></td>
-          <td><%= link_to 'Editar', edit_advertisement_path(advertisement) %></td>
-          <td><%= link_to 'Borrar', advertisement, method: :delete, data: { confirm: 'Estas seguro?' } %></td>
+          <th>Título</th>
+          <th>Descripción</th>
+          <th>Valor</th>
+          <th>Imagen</th>
+          <th>Usuario</th>
+          <th colspan="3"></th>
         </tr>
-      <% end %>
-    </tbody>
-  </table>
+      </thead>
 
-  <br>
+      <tbody>
+        <% @advertisements.each do |advertisement| %>
+          <tr>
+            <td><%= advertisement.tittle %></td>
+            <td><%= advertisement.description %></td>
+            <td><%= advertisement.amount %></td>
+            <td><%= image_tag(advertisement.imagen_url, :width => 200, :height => 200) if advertisement.imagen.present? %></td>
+            <td><%= advertisement.user.last_name %> <%= advertisement.user.name %></td>
+            <td><%= link_to 'Mostrar', advertisement %></td>
+            <td><%= link_to 'Editar', edit_advertisement_path(advertisement) %></td>
+            <td><%= link_to 'Borrar', advertisement, method: :delete, data: { confirm: 'Estas seguro?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
 
-  <%= link_to new_advertisement_path do%>
-    <%= image_tag('btn-enviar.png') %>
-  <% end %> 
-</div>
-<div class="col-md-6">
-  <div class="help-box">
-    <%= image_tag('info.png') %>
-    <h2>Nota:</h2>
-    <p>En este espacio podrás publicar los clasificados para la comunidad, eso que ya no uses, servicios a la comunidad o tus ventas de garaje.</p>
+    <br>
+
+    <%= link_to new_advertisement_path do%>
+      <%= image_tag('btn-enviar.png') %>
+    <% end %> 
+  </div>
+  <div class="col-md-6">
+    <div class="help-box">
+      <h2>Nota:</h2>
+      <p>Hemos habilitado esta sección para los recientes lo cuales pueden ofrecer a su comunidad elementos o bienes los cuales quiera vender. Toda la comunidad podrá ver las imagines del clasificado así como su información contacto. Cada residente puede subir un máximo de 3 clasificados por mes, en caso de necesitar mas por favor comunicarse con solicitud@cmg.com.co</p>
+    </div>
   </div>
 </div>
