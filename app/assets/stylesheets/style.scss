@@ -72,7 +72,7 @@ body a:hover{
 #sidebar ul li img {
     width: 40px;
     height: 40px;
-    margin-right: 8px;
+    margin-right: 5px;
 }
 #sidebar .logo-CMG {
     position: absolute;
@@ -159,7 +159,7 @@ ul.sidebar-menu li a {
     color:#fff;
     text-decoration:none;
     display:block;
-    padding:18px 0 18px 25px;
+    padding:10px 0 10px 25px;
     font-size:12px;
     outline:none;
     -webkit-transition:all 0.3s ease;
@@ -234,9 +234,6 @@ ul.sidebar-menu li a.active i {
 
 .user-info {
   right:0 ;
-  padding: 1px;
-  margin: 0px;
-  padding: 10px 0;
   position: relative;
 } 
 
