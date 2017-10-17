@@ -26,7 +26,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
       </div>
       <div class="user-info">
         <% if user_signed_in? %>
-        <p>BIENVENIDO 
+        <p>BIENVENIDO<br>
           <%= link_to edit_user_registration_path do %>
             <%= current_user.name.upcase %> <%= current_user.last_name.upcase %>
           <%end %>
