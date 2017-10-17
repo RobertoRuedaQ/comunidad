@@ -9,18 +9,15 @@
 //
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
-
 //= require jquery2.0.3.min
-//= require raphael-min
-//= require morris
 //= require bootstrap
-//= require jquery.dcjqaccordion.2.7
 //= require scripts
 //= require moment 
+//= require rails-ujs
 //= require jquery.slimscroll
 //= require jquery.nicescroll
+//= require jquery.dcjqaccordion.2.7
 //= require jquery.scrollTo
-//= require rails-ujs
 //= require fullcalendar/fullcalendar
 //= require fullcalendar/locale/es
 //= require common_area
