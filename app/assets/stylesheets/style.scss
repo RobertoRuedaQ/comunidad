@@ -296,6 +296,7 @@ ul.sidebar-menu li a.active i {
     border-color: #4c8799;
     display: inline-block;
     position: fixed;
+    z-index: 1;
     bottom: 15px;
     right: 25px;
     width: 400px;
