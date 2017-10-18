@@ -21,3 +21,4 @@
 //= require fullcalendar/fullcalendar
 //= require fullcalendar/locale/es
 //= require common_area
+//= require decision
