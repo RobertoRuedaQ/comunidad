@@ -10,6 +10,7 @@
         <th>Incio</th>
         <th>Final</th>
         <th>Usuario</th>
+        <th>Aprobado?</th>
         <th colspan="3"></th>
       </tr>
     </thead>
@@ -22,6 +23,11 @@
           <td><%= common_area.start_hour.hour %>:<%= common_area.start_hour.min %></td>
           <td><%= common_area.end_hour.hour %>:<%= common_area.end_hour.min %></td>
           <td><%= common_area.user.name %> <%= common_area.user.last_name %></td>
+          <%if common_area.aproved?%> 
+            <td><i class="fa fa-check" aria-hidden="true"></i></td>
+          <%else %>
+            <td> pendiente </td>
+          <%end %>
         </tr>
       <% end %>
     </tbody>

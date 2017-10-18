@@ -23,8 +23,6 @@
             <td><%= image_tag(advertisement.imagen_url, :width => 200, :height => 200) if advertisement.imagen.present? %></td>
             <td><%= advertisement.user.last_name %> <%= advertisement.user.name %></td>
             <td><%= link_to 'Mostrar', advertisement %></td>
-            <td><%= link_to 'Editar', edit_advertisement_path(advertisement) %></td>
-            <td><%= link_to 'Borrar', advertisement, method: :delete, data: { confirm: 'Estas seguro?' } %></td>
           </tr>
         <% end %>
       </tbody>

@@ -14,6 +14,7 @@ class CommonAreaDashboard < Administrate::BaseDashboard
     date: Field::DateTime,
     start_hour: Field::DateTime,
     end_hour: Field::DateTime,
+    aproved: Field::Boolean,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
   }.freeze
@@ -39,6 +40,7 @@ class CommonAreaDashboard < Administrate::BaseDashboard
     :date,
     :start_hour,
     :end_hour,
+    :aproved,
     :created_at,
     :updated_at,
   ].freeze
@@ -52,6 +54,7 @@ class CommonAreaDashboard < Administrate::BaseDashboard
     :date,
     :start_hour,
     :end_hour,
+    :aproved,
   ].freeze
 
   # Overwrite this method to customize how common areas are displayed

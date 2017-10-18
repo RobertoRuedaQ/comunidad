@@ -63,6 +63,7 @@ ActiveRecord::Schema.define(version: 20171012134744) do
     t.date "date"
     t.time "start_hour"
     t.time "end_hour"
+    t.boolean "aproved", default: false
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
