@@ -25,3 +25,7 @@
 $(".close").on("click", function(){
     $(".help-box").remove()
 })
+
+$("#buttons .btn").on("click", function(){
+	$(this).parent().remove()
+})

@@ -48,16 +48,10 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: { format: "json" } do
     namespace :v1 do
-      resources :users
-      resources :decisions
-      resources :children
-      resources :chats
-      resources :common_areas
+      resources :apartments
       resources :advertisements
+      resources :common_areas
       resources :complaints
-      resources :vehicles
-      resources :pets
-      resources :werehouses
     end
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
