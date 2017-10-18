@@ -21,3 +21,7 @@
 //= require fullcalendar/fullcalendar
 //= require fullcalendar/locale/es
 //= require common_area
+
+$(".close").on("click", function(){
+    $(".help-box").remove()
+})
