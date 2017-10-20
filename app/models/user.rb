@@ -10,6 +10,8 @@ before_create -> {self.token = generate_token}
   has_many :user_hobbies
   has_many :hobbies, through: :user_hobbies
   has_many :chats
+  has_many :orders
+  
 
   #validacion de registro
   validates :email, :name, :last_name, :gender, :cellphone, :day_of_birth, :apartment_id, presence: true 

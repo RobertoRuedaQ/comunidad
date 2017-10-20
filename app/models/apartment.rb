@@ -7,6 +7,7 @@ class Apartment < ApplicationRecord
   has_many :pets
   has_many :vehicles
   has_many :werehouses
+  has_many :orders
 
   def apto
   	apto = "#{number}-""#{block}"

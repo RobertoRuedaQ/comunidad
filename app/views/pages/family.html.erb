@@ -160,6 +160,26 @@
 			  </tbody>
 			</table> 
 		</div>
+		<div class="col-md-6">
+			<h2>Domicilios</h2>
+			<table class="table table-striped b-t b-light">
+			  <thead>
+			    <tr>
+			      <th>Estado de la orden</th>
+			      <th>Valor</th>
+			      <th colspan="3"></th>
+			    </tr>
+			  </thead>
+				<tbody>
+			    <% current_user.orders.each do |order|%>
+			      <tr>
+			        <td><%= order.order_status.name %></td>
+			        <td><%= order.total %></td>
+			      </tr>
+			    <% end %>
+			  </tbody>
+			</table> 
+		</div>
 	</div>
 </div>
 <%end %>
