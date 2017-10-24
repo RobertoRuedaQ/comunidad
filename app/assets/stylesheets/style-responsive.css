@@ -73,7 +73,7 @@
         top: 80px;
     }
     #main-content{
-        margin-left: 0px !important;
+        margin-left: 0px;
     }
     /*calendar*/
     .fc-button-inner {
@@ -246,7 +246,11 @@
         display: none !important;
     }
     .sidebar-toggle-box{
-        right: 10px;
+      display: none !important;
+    }
+
+    .help-box{
+      display: none !important;
     }
     .top-nav{
         margin-bottom: 20px;
