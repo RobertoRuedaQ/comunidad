@@ -7,6 +7,12 @@ Rails.application.routes.draw do
   root to: "pages#show", page:'home'
   get "pages/show", page:'family', as: 'family'
 
+  namespace :delivery do
+    resources :products
+    resources :orders
+    resources :order_statuses
+    resources :order_items
+  end
   
   namespace :admin do
     resources :users
@@ -21,10 +27,6 @@ Rails.application.routes.draw do
     resources :workers
     resources :decisions
     resources :hobbies
-    resources :products
-    resources :orders
-    resources :order_statuses
-    resources :order_items
     root to: "users#index"
   end
 
