@@ -1,6 +1,6 @@
 class CommonAreasController < ApplicationController
   before_action :set_common_area, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!
   # GET /common_areas
   # GET /common_areas.json
   def index
