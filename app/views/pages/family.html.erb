@@ -1,20 +1,26 @@
 <!-- botones y texto de info -->
-<div class="row">
-	<div class="col-md-6">
-		<h1>Crear:</h1>
-			<%= link_to new_child_path do%>
-				<%= image_tag('btn-nino.png') %>
-			<%end%>
-			<%= link_to new_werehouse_path do%>
-				<%= image_tag('btn-empleado.png') %>
-			<%end %>
-			<%= link_to new_pet_path do%>
-				<%= image_tag('btn-mascota.png') %>
-			<%end %>
-			<%= link_to new_vehicle_path do%>
-				<%= image_tag('btn-vehiculo.png') %>
-			<%end %>
-	</div>
+<%if user_sign_in? %>
+	<div class="row">
+		<div class="col-md-6">
+			<h1>Crear:</h1>
+				<%= link_to new_child_path do%>
+					<%= image_tag('btn-nino.png') %>
+				<%end%>
+				<%= link_to new_werehouse_path do%>
+					<%= image_tag('btn-empleado.png') %>
+				<%end %>
+				<%= link_to new_pet_path do%>
+					<%= image_tag('btn-mascota.png') %>
+				<%end %>
+				<%= link_to new_vehicle_path do%>
+					<%= image_tag('btn-vehiculo.png') %>
+				<%end %>
+		</div>
+	<%else%>
+		<div class="col-md-6">
+			<h1>Recuerda iniciar sesión para poder hacer uso de esta herramienta</h1>
+		</div>
+	<%end %>
 	<div class="col-md-6">
 		<div class="help-box">
     	<h2><strong>NOTA:</strong></h2>
