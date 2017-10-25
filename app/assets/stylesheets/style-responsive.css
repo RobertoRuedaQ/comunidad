@@ -245,6 +245,12 @@
         z-index: 1005;
         display: none !important;
     }
+
+    .user-info p{
+      text-decoration: none !important;
+      text-align: center !important;
+      margin: auto 0 !important;
+    }
     .sidebar-toggle-box{
       display: none !important;
     }
@@ -260,7 +266,7 @@
     }
 
     .wrapper{
-      margin-top: 0px;
+      margin-top: 0px !important;
       width: 100%;
       float: none;
       position: relative;
@@ -289,6 +295,25 @@
     .wrapper .container-data{
       margin: 0;
       padding: 0;
+    }
+
+    .wrapper .container-data .col-md-6{
+      align-content: center;
+    }
+
+    .wrapper .container-data .col-md-6 img{
+      left: auto !important;
+      right: auto;
+    }
+
+    .wrapper .container-data input.ggg{
+      width: 100%;
+      margin-left: 40px;
+    }
+
+    .wrapper .container-data .{
+      width: 100%;
+      margin-left: 40px;
     }
     #main-content{
         margin-left: 0px !important;
