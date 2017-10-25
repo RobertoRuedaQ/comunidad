@@ -1,6 +1,6 @@
 class DecisionsController < ApplicationController
   before_action :set_decision, only: [:show, :edit, :update, :destroy]
-  before_action :active_user
+  before_action :authenticate_user!
   # GET /decisions
   # GET /decisions.json
   def index
