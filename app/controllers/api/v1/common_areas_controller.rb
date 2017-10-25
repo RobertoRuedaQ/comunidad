@@ -16,7 +16,7 @@ class Api::V1::CommonAreasController < ApplicationController
 private
 
 	def common_area_params
-	  params.require(:common_area).permit(:place, :date, :start_hour, :end_hour, :user_id)
+	  params.require(:common_area).permit(:title, :date, :start_hour, :end_hour, :user_id)
 	end
   
 end

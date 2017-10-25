@@ -4,7 +4,7 @@ class CommonAreasController < ApplicationController
   # GET /common_areas
   # GET /common_areas.json
   def index
-    $common_areas = CommonArea.all
+    @common_areas = CommonArea.all
   end
 
   # GET /common_areas/1
