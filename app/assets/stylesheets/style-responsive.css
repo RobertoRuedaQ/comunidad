@@ -266,7 +266,8 @@
     }
 
     .wrapper{
-      margin-top: 0px !important;
+      margin: 0px !important;
+      padding: 0px !important;
       width: 100%;
       float: none;
       position: relative;
@@ -299,6 +300,7 @@
 
     .wrapper .container-data .col-md-6{
       align-content: center;
+      margin-top: 20px;
     }
 
     .wrapper .container-data .col-md-6 img{
@@ -307,7 +309,12 @@
     }
 
     .wrapper .container-data input.ggg{
-      width: 100%;
+      width: 80%;
+      margin-left: 40px;
+    }
+
+    .wrapper .container-data textarea.ggg{
+      width: 80%;
       margin-left: 40px;
     }
     

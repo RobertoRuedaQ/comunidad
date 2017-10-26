@@ -69,6 +69,6 @@ class WerehousesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def werehouse_params
-      params.require(:werehouse).permit(:name, :last_name, :document_id, :ARL)
+      params.require(:werehouse).permit(:name, :last_name, :document_id, :ARL, :apartment_id)
     end
 end
