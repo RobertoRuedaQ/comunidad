@@ -4,8 +4,9 @@ Rails.application.routes.draw do
   resource :cart, only: [:show]
   resources :order_items, only: [:create, :update, :destroy]
 
-  root to: "pages#show", page:'home'
+  root to: "pages#home"
   get "pages/show", page:'family', as: 'family'
+  get "pages/administrate_user", as: 'admin_user'
 
   namespace :delivery do
     resources :products

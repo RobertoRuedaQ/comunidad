@@ -1,6 +1,6 @@
 <%if signed_in? %>
 	<% if current_user.active %>
-		<%=  @newsletters %>
+		<%= render partial:"/newsletters/list"%>
 		<%= image_tag('Bienvenidos-Mediterraneo.png') %>
 	<%else %>
 		<p><h1>Acercate a la administración para que puedas aprovechar esta app.</h1></p>

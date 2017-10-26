@@ -1,4 +1,4 @@
-<%= form_with(model: newsletter, local: true) do |form| %>
+<%= form_with(model: newsletter, local: true, :html => {:multipart => true}) do |form| %>
   <% if newsletter.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(newsletter.errors.count, "error") %> prohibited this newsletter from being saved:</h2>
@@ -15,10 +15,9 @@
     <%= form.label :tittle, t('Título') %>
     <%= form.text_field :tittle, id: :newsletter_tittle, class:"form-control" %>
   </div>
-
   <div class="field">
     <%= form.label :file, t('Archivo') %>
-    <%= form.text_field :file, id: :newsletter_file, class:"form-control" %>
+    <%= form.file_field :file, id: :newsletter_file%>
   </div>
 
   <div class="actions">

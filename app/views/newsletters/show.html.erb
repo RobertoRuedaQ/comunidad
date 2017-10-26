@@ -7,7 +7,7 @@
 
 <p>
   <strong>Archivo:</strong>
-  <%= @newsletter.file %>
+  <%= image_tag(@newsletter.file_url, :width => 170, :height => 190) if @newsletter.file.present? %>
 </p>
 
 <%= link_to 'Editar', edit_newsletter_path(@newsletter) %> |

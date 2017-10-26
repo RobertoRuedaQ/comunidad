@@ -1,0 +1,28 @@
+<div class="row">
+	<div class="col-md-6">
+		<table class="table">
+	    <thead>
+	      <tr>
+	        <th>nombre</th>
+	        <th>apellido</th>
+	        <th>activo</th>
+          <th>Apartamento</th>
+	      </tr>
+	    </thead>
+	    <tbody>
+	      <% @users.each do |user| %>
+	          <tr>
+	            <td><%= user.name %></td>
+	            <td><%= user.last_name %></td>
+	            <% if user.active %>
+              <td> <span class="fa fa-check"></span></td>
+              <%else %>
+              <td>pendiente por activación</td>
+              <%end%>
+              <td><%= user.apartment.apto %></td>
+	          </tr>
+	      <% end %>
+	    </tbody>
+  	</table>
+	</div>
+</div>

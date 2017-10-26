@@ -44,13 +44,18 @@
             <%end %>
             <%if current_user && current_user.active&&current_user.admin %>
               <li>
-                <%= link_to activation_path do %>
-                  <%= image_tag("home.png") %> ACTIVAR
+                <%= link_to new_decision_path do %>
+                  <%= image_tag("decision.png") %> CREAR VOTACION
                 <% end %>
               </li>
               <li>
-                <%= link_to new_decision_path do %>
-                  <%= image_tag("decision.png") %> CREAR VOTACION
+                <%= link_to new_newsletter_path do %>
+                  <%= image_tag("newsletter.png") %> CREAR ANUNCIO
+                <% end %>
+              </li>
+              <li>
+                <%= link_to admin_user_path do %>
+                  <%= image_tag("usuarios.png") %> USUARIOS
                 <% end %>
               </li>
             <%end %>

@@ -1,0 +1,3 @@
+<% @newsletters.each do |newsletter| %>
+	<%= image_tag(newsletter.file_url, :width => 850, :height => 1100) if newsletter.file.present? %>
+<% end %>

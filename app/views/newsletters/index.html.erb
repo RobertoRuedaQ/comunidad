@@ -15,7 +15,7 @@
     <% @newsletters.each do |newsletter| %>
       <tr>
         <td><%= newsletter.tittle %></td>
-        <td><%= newsletter.file %></td>
+        <td><%= image_tag(newsletter.file_url, :width => 500, :height => 500) if newsletter.file.present? %></td>
         <td><%= link_to 'Mostrar', newsletter %></td>
         <td><%= link_to 'Editar', edit_newsletter_path(newsletter) %></td>
         <td><%= link_to 'Borrar', newsletter, method: :delete, data: { confirm: 'Estas seguro?' } %></td>
@@ -25,5 +25,4 @@
 </table>
 
 <br>
-
 <%= link_to 'Nuevo anuncio', new_newsletter_path %>
