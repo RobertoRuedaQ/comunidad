@@ -1,4 +1,6 @@
-<%= form_with(model: newsletter, local: true, :html => {:multipart => true}) do |form| %>
+<div class="row">
+  <div class="col-md-6">
+   <%= form_with(model: newsletter, local: true, :html => {:multipart => true}) do |form| %>
   <% if newsletter.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(newsletter.errors.count, "error") %> prohibited this newsletter from being saved:</h2>
@@ -11,16 +13,21 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :tittle, t('Título') %>
-    <%= form.text_field :tittle, id: :newsletter_tittle, class:"form-control" %>
-  </div>
-  <div class="field">
-    <%= form.label :file, t('Archivo') %>
-    <%= form.file_field :file, id: :newsletter_file%>
-  </div>
+    <div class="field">
+      <%= form.label :tittle, t('Título') %>
+      <%= form.text_field :tittle, id: :newsletter_tittle, class:"form-control" %>
+    </div>
+    <div class="field">
+      <%= form.label :file, t('Archivo') %>
+      <%= form.file_field :file, id: :newsletter_file%>
+    </div>
 
-  <div class="actions">
-    <%= form.submit 'Crear anuncio' %>
+    <div class="actions">
+       <%= image_submit_tag("btn-crear.png") %>
+    </div>
+  <% end %>
+ 
   </div>
-<% end %>
+  <div class="col-md-6"></div>
+</div>
+

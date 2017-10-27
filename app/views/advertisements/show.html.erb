@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+
 
 <p>
   <strong>Título:</strong>
@@ -16,12 +16,12 @@
 </p>
 
 <p>
-  <strong>Image:</strong>
+  <strong>Imagen:</strong>
   <%= image_tag(@advertisement.imagen_url, :width => 600, :height => 600) if @advertisement.imagen.present? %>
 </p>
 
 <p>
-  <strong>User:</strong>
+  <strong>Usuario:</strong>
   <%= @advertisement.user.name %> <%= @advertisement.user.last_name %>
   <%= @advertisement.user.cellphone %>
   <%= @advertisement.user.email %>

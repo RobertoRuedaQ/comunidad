@@ -69,6 +69,40 @@ input[type=image]{
     right: 15px;
 }
 
+.col-md-6{
+    min-height: 200px;
+    max-width: 75%;
+}
+
+.col-md-6 .product-title{
+  text-transform: UPPERCASE;
+  font-weight: bold;
+  margin: 20px 20px;
+  font-size: 18px;
+  color: #ff9f1a;
+}
+
+.col-md-6 .product-info{
+  text-transform: UPPERCASE;
+  font-weight: bold;
+  margin: 10px 10px;
+  font-size: 14px;
+}
+
+.col-md-6 .product-description{
+  margin: 10px 10px;
+  font-size: 12px;
+}
+
+
+.col-md-6 .preview-pic img{
+  width: 400px;
+  height: 350px;
+  margin: 20px 20px;
+  align-items: center;
+}
+
+
     
 /*sidebar navigation*/
 #sidebar {
@@ -2574,13 +2608,14 @@ ul.inbox-pagination li {
 /*--login--*/
 input.ggg{
     width: 50%;
-    padding: 0px 0px 15px 15px;
+    padding: 10px 0px 15px 15px;
     border: 1px solid #0092c9;
     outline: none;
     font-size: 14px;
     color: rgb(10, 95, 117);
     margin: 0px 0px 20px 0px;
-	  background: none;
+	background: none;
+    line-height: auto;
 }
 
 textarea.ggg{

@@ -1,39 +1,33 @@
 <div class="row">
   <div class="col-md-6">
-    <h1>Clasificados</h1>
-
-    <table class="table">
-      <thead>
-        <tr>
-          <th>Título</th>
-          <th>Descripción</th>
-          <th>Valor</th>
-          <th>Imagen</th>
-          <th>Usuario</th>
-          <th colspan="3"></th>
-        </tr>
-      </thead>
-
-      <tbody>
-        <% @advertisements.each do |advertisement| %>
-          <tr>
-            <td><%= advertisement.tittle %></td>
-            <td><%= advertisement.description %></td>
-            <td><%= advertisement.amount %></td>
-            <td><%= image_tag(advertisement.imagen_url, :width => 200, :height => 200) if advertisement.imagen.present? %></td>
-            <td><%= advertisement.user.last_name %> <%= advertisement.user.name %></td>
-            <td><%= link_to 'Mostrar', advertisement %></td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
-
-    <br>
-
+        <h1>Clasificados</h1>
     <%= link_to new_advertisement_path do%>
-      <%= image_tag('btn-enviar.png') %>
+      <%= image_tag('btn-crear.png') %>
     <% end %> 
   </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+        <% @advertisements.each do |advertisement| %>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="preview-pic">
+              <%= image_tag(advertisement.imagen_url, :width => 200, :height => 200) if advertisement.imagen.present? %>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <h3 class="product-title"><%= advertisement.tittle %></h3>
+            <h4 class="product-info">Precio: <span><%= advertisement.amount %></span></h4>
+            <h4 class="product-info">Usuario: <span><%= advertisement.user.last_name %> <%= advertisement.user.name %></span></h4>
+            <h4 class="product-info">Tel: <span><%= advertisement.user.cellphone %></span></h4>
+            <h4 class="product-info">Email: <span><%= advertisement.user.email %></span></h4>
+            <p class="product-description"><%= advertisement.description %></p>
+          </div>
+        </div>
+        <%end %>
+    </div>
+
   <div class="col-md-6">
     <div class="help-box">
       <h2><strong>NOTA:</strong></h2>
@@ -42,3 +36,8 @@
     </div>
   </div>
 </div>
+
+
+
+
+

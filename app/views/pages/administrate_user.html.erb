@@ -5,8 +5,8 @@
 	      <tr>
 	        <th>nombre</th>
 	        <th>apellido</th>
-	        <th>activo</th>
           <th>Apartamento</th>
+	        <th>activo</th>
 	      </tr>
 	    </thead>
 	    <tbody>
@@ -14,12 +14,14 @@
 	          <tr>
 	            <td><%= user.name %></td>
 	            <td><%= user.last_name %></td>
-	            <% if user.active %>
-              <td> <span class="fa fa-check"></span></td>
-              <%else %>
+	            <td><%= user.apartment.apto %></td>
+	            <% if user.active == false %>
               <td>pendiente por activación</td>
+              <%else %>
+              <td> <span class="fa fa-check"></span></td>
+              <td><%=button_to 'Activar', user_path(user), method: :patch%></td>
+              <td><%=button_to 'Borrar', user_path(user), method: :delete%></td>
               <%end%>
-              <td><%= user.apartment.apto %></td>
 	          </tr>
 	      <% end %>
 	    </tbody>

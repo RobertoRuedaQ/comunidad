@@ -31,8 +31,12 @@
     <%= form.select :ARL,['Positiva', 'Bolivar', 'Aurora', 'Liberty', 'Maphre', 'Colmena', 'Alfa', 'Colpatria', 'Equidad', 'Sura'], include_blank: true %>
   </div>
 
+  <div class="field">
+    <%= form.hidden_field :apartment_id, value: current_user.apartment.id %>
+  </div>
+
 
   <div class="actions">
-    <%= form.submit 'Enviar', class: 'btn btn-default' %>
+    <%= image_submit_tag("btn-crear.png") %>
   </div>
 <% end %>

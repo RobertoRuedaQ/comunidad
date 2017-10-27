@@ -1,12 +1,24 @@
 Rails.application.routes.draw do
+  root to: "pages#home"
+  get "pages/show", page:'family', as: 'family'
+  get "pages/administrate_user", as: 'activation'
 
   resources :products, only: [:index]
   resource :cart, only: [:show]
   resources :order_items, only: [:create, :update, :destroy]
 
-  root to: "pages#home"
-  get "pages/show", page:'family', as: 'family'
-  get "pages/administrate_user", as: 'admin_user'
+  resources :decisions
+  resources :children
+  resources :chats
+  resources :workers
+  resources :common_areas
+  resources :newsletters
+  resources :advertisements
+  resources :complaints
+  resources :vehicles
+  resources :pets
+  resources :apartments
+  resources :werehouses
 
   namespace :delivery do
     resources :products
@@ -31,19 +43,6 @@ Rails.application.routes.draw do
     root to: "users#index"
   end
 
-  resources :decisions
-  resources :children
-  resources :chats
-  resources :workers
-  resources :common_areas
-  resources :newsletters
-  resources :advertisements
-  resources :complaints
-  resources :vehicles
-  resources :pets
-  resources :apartments
-  resources :werehouses
-  
   devise_for :users, controllers: {
   sessions: 'users/sessions',
   registrations: 'users/registrations'
@@ -65,5 +64,7 @@ Rails.application.routes.draw do
       resources :orders
     end
   end
+
+  resources :users, only: [:index, :update, :destroy]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

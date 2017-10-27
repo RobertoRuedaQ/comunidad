@@ -1,28 +1,37 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Anuncios</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Título</th>
-      <th>Archivo</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @newsletters.each do |newsletter| %>
-      <tr>
-        <td><%= newsletter.tittle %></td>
-        <td><%= image_tag(newsletter.file_url, :width => 500, :height => 500) if newsletter.file.present? %></td>
-        <td><%= link_to 'Mostrar', newsletter %></td>
-        <td><%= link_to 'Editar', edit_newsletter_path(newsletter) %></td>
-        <td><%= link_to 'Borrar', newsletter, method: :delete, data: { confirm: 'Estas seguro?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
+<div class="row">
+  <div class="col-md-6">
+    <%= link_to new_newsletter_path do %>
+      <%=image_tag("btn-crear.png")  %>
+    <%end  %>
+  </div>
+</div>
 <br>
-<%= link_to 'Nuevo anuncio', new_newsletter_path %>
+<div class="row">
+  <div class="col-md-12">
+    <h1>Anuncios</h1>
+    <table>
+      <thead>
+        <tr>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @newsletters.each do |newsletter| %>
+          <tr>
+            <td><%= newsletter.tittle %></td>
+            <td><%= image_tag(newsletter.file_url, :width => 400, :height => 400) if newsletter.file.present? %></td>
+            <td><%= link_to 'Mostrar', newsletter %></td>
+            <td><%= link_to 'Editar', edit_newsletter_path(newsletter) %></td>
+            <td><%= link_to 'Borrar', newsletter, method: :delete, data: { confirm: 'Estas seguro?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+</div>
+</div>
+
+
+
+
+
+

@@ -160,9 +160,9 @@
 			        <td><%= werehouse.name %></td>
 			        <td><%= werehouse.last_name %></td>
 			        <td><%= werehouse.ARL %></td>
-			        <td><%= link_to 'Mostar', vehicle %></td>
-			        <td><%= link_to 'Editar', edit_vehicle_path(vehicle) %></td>
-			        <td><%= link_to 'Borrar', vehicle, method: :delete, data: { confirm: 'Estas seguro' } %></td>
+			        <td><%= link_to 'Mostar', werehouse %></td>
+			        <td><%= link_to 'Editar', edit_werehouse_path(werehouse) %></td>
+			        <td><%= link_to 'Borrar', werehouse, method: :delete, data: { confirm: 'Estas seguro' } %></td>
 			      </tr>
 			    <% end %>
 			  </tbody>
