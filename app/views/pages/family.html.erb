@@ -56,7 +56,6 @@
 			    <tr>
 			      <th>Nombre</th>
 			      <th>Apellido</th>
-
 			      <th>Género</th>
 			    </tr>
 			  </thead>
@@ -66,9 +65,8 @@
 			        <td><%= child.name %></td>
 			        <td><%= child.last_name %></td>
 			        <td><%= child.gender %></td>
-			        <td><%= link_to 'Show', child %></td>
-			        <td><%= link_to 'Edit', edit_child_path(child) %></td>
-			        <td><%= link_to 'Destroy', child, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+			        <td><%= link_to 'Editar', edit_child_path(child) %></td>
+			        <td><%= link_to 'Borrar', child, method: :delete, data: { confirm: 'Estas seguro?' } %></td>
 			      </tr>
 			    <% end %>
 			  </tbody>
