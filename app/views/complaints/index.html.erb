@@ -1,36 +1,36 @@
-<div class="col-md-6">
-  <h1>Quejas y reclamos</h1>
-
-  <table class="table">
-    <thead>
-      <tr>
-        <th>Apartmento</th>
-        <th>Tipo</th>
-        <th>Descripción</th>
-        <th>Respuesta</th>
-        <th>Resuelto?</th>
-        <th>Imagen</th>
-        <th colspan="3"></th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @complaints.each do |complaint| %>
-          <tr>
-            <td><%= complaint.apartment.apto %></td>
-            <td><%= complaint.category %></td>
-            <td><%= complaint.description %></td>
-            <td><%= complaint.answer %></td>
-            <td><%= complaint.solved %></td>
-            <td><%= image_tag(complaint.imagen_url, :width => 200, :height => 200) if complaint.imagen.present? %></td>
-          </tr>
-      <% end %>
-    </tbody>
-  </table>
-  <br>
-  <%= link_to new_complaint_path do%>
-  <%= image_tag('btn-enviar-solicitud.png')%>
-  <%end %>
+<div class="row">
+  <div class="col-md-6">
+    <h1>Quejas y Reclamos</h1>
+    <%= link_to new_complaint_path do%>
+      <%= image_tag('btn-enviar-solicitud.png')%>
+    <%end %>
+  </div>
 </div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+        <%@complaints.each do |complaint| %>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="preview-pic">
+              <%= image_tag(complaint.imagen_url, :width => 200, :height => 200) if complaint.imagen.present? %>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <%if complaint.solved %>
+            <h3 class="product-title"> <span class="fa fa-check"></span></h3>
+            <%else %>
+            <h3 class="product-title">pendiente</h3>
+            <%end %>
+            <h3 class="product-title">Apartamento: <%= complaint.apartment.apto %></h3>
+            <h4 class="product-info">Categoría:<%= complaint.category %></h4>
+            <h4 class="product-info">Asunto:<%= complaint.topic %></h4>
+            <p class="product-description">Descripción:<%= complaint.description %></p>
+            <p class="product-description">Respuesta:<%= complaint.answer %></p>
+          </div>
+        </div>
+        <%end %>
+    </div>
 
 <div class="col-md-6">
   <div class="help-box">
@@ -39,3 +39,4 @@
     <p>en esta sección usted podrá hacer una petición, sugerencia o queja con la posibilidad de enviar una imagen que refuerce su comunicación, esta información llegara directamente a la administración de su conjunto dando un seguimiento y solución a su petición.</p>
   </div>
 </div>
+
