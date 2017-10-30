@@ -10,6 +10,7 @@ gem 'acts_as_votable', '~> 0.10.0'
 gem 'administrate'
 gem 'devise'
 gem 'carrierwave'
+gem 'fog-aws', group: :production
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
