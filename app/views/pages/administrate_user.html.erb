@@ -17,9 +17,10 @@
 	            <td><%= user.apartment.apto %></td>
 	            <% if user.active == false %>
               <td>pendiente por activación</td>
+              <td><%=button_to 'Activar', user_path(user), method: :patch%></td>
+              <td><%=button_to 'Borrar', user_path(user), method: :delete%></td>
               <%else %>
               <td> <span class="fa fa-check"></span></td>
-              <td><%=button_to 'Activar', user_path(user), method: :patch%></td>
               <td><%=button_to 'Borrar', user_path(user), method: :delete%></td>
               <%end%>
 	          </tr>
