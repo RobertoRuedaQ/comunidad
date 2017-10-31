@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-
-
 set :application, "set your application name here"
 set :repository,  "set your repository location here"
 
@@ -26,7 +23,7 @@ role :db,  "your slave db-server here"
 #     run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
 #   end
 # end
-=======
+
 set :application, 'comunidad'
 set :repo_url, 'https://github.com/RobertoRuedaQ/comunidad.git'
 set :branch, "master"
@@ -36,4 +33,3 @@ set :user, 'deploy'
 
 append :linked_files, "config/database.yml", "config/secrets.yml"
 append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "vendor/bundle", "public/system", "public/uploads"
->>>>>>> 8a865410d16f6f33e581535dd39674f22a57fac7
