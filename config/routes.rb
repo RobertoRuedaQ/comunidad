@@ -2,7 +2,8 @@ Rails.application.routes.draw do
   root to: "pages#home"
   get "pages/show", page:'family', as: 'family'
   get "pages/administrate_user", as: 'activation'
-
+  resources :resolutions, only: [:index, :update, :destroy]
+  resources :answers
   resources :products, only: [:index]
   resource :cart, only: [:show]
   resources :order_items, only: [:create, :update, :destroy]

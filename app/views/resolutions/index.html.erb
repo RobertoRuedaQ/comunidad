@@ -1,0 +1,46 @@
+<div class="row">
+  <div class="col-md-6">
+  <h1>Aprobar Uso de Areas comunes</h1>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Lugar</th>
+        <th>Fecha</th>
+        <th>Incio</th>
+        <th>Final</th>
+        <th>Usuario</th>
+        <th>Aprobado?</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @common_areas.each do |common_area| %>
+        <tr>
+          <td><%= common_area.title %></td>
+          <td><%= common_area.date %></td>
+          <td><%= common_area.start_hour.hour %>:<%= common_area.start_hour.min %></td>
+          <td><%= common_area.end_hour.hour %>:<%= common_area.end_hour.min %></td>
+          <td><%= common_area.user.name %> <%= common_area.user.last_name %></td>
+          <%if common_area.aproved?%> 
+            <td><i class="fa fa-check" aria-hidden="true"></i></td>
+          <%else %>
+            <td> pendiente </td>
+            <td><%=button_to 'Activar', resolution_path(common_area), method: :patch%></td>
+            <td><%=button_to 'Borrar', resolution_path(common_area), method: :delete%></td>
+          <%end %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+  <%= link_to new_common_area_path do%>
+    <%= image_tag('solicitud.png') %>
+  <%end %>
+  </div>
+  <div class="col-md-6">
+    <div id="calendar"></div>
+  </div>
+</div>

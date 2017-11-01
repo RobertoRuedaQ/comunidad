@@ -1,0 +1,46 @@
+<h1>Editar queja o reclamo</h1>
+
+<div class="col-md-6">
+  <%= form_with(model: @complaint, url: answer_path(@complaint), local: true) do |form| %>
+    <div class="field">
+      <%= form.label :category, t('Tipo') %>
+      <%= form.select :category,['Petición', 'Queja', 'Reclamo', 'Sugerencia'], include_blank: true %>
+    </div>
+
+    <div class="field">
+      <%= form.label :topic, t('Asunto') %>
+      <%= form.select :topic,['Vecino', 'Personal Aseo', 'Personal de vigilancia', 'Areas comunes', 'Salón social', 'Piscina', 'Turco', 'Sauna', 'GYM', 'Parqueaderos', 'BBQ', 'Parque'], include_blank: true %>
+    </div>
+
+    <div class="field">
+      <%= form.label :description, t('Descripción') %>
+      <%= form.text_area :description, id: :complaint_description, class:"form-control ggg" %>
+    </div>
+
+    <div class="field">
+      <%= form.label :imagen, t('Imagen') %>
+      <%= form.file_field :imagen %>
+    </div>
+
+    <div class="field">
+      <%= form.label :answer, t('Respuesta') %>
+      <%= form.text_area :answer, id: :complaint_answer, class:"form-control ggg" %>
+    </div>
+
+    <div class="field">
+      <%= form.label :solved, t('¿La solicitud a sido resuelta?')%>
+      <%= form.check_box :solved, class: "checkbox"%>
+    </div>
+
+    <div class="field">
+      <%= form.hidden_field :apartment_id, value: current_user.apartment.id %>
+    </div>
+
+    <div class="actions">
+      <%= image_submit_tag("btn-enviar.png") %>
+    </div>
+  <% end %>
+</div>
+
+
+<%= link_to 'Regresar', answers_path %>

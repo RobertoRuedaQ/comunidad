@@ -1,0 +1,35 @@
+<div class="row">
+  <div class="col-md-6">
+    <h1>Atender Quejas y Reclamos</h1>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+        <%@complaints.each do |answer| %>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="preview-pic">
+              <%= image_tag(answer.imagen_url, :width => 200, :height => 200) if answer.imagen.present? %>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <%if answer.solved %>
+            <h3 class="product-title"> <span class="fa fa-check"></span></h3>
+            <%else %>
+            <h3 class="product-title">pendiente</h3>
+            <%end %>
+            <h3 class="product-title">Apartamento: <%= answer.apartment.apto %></h3>
+            <h4 class="product-info">Categoría:<%= answer.category %></h4>
+            <h4 class="product-info">Asunto:<%= answer.topic %></h4>
+            <p class="product-description">Descripción:<%= answer.description %></p>
+            <p class="product-description">Respuesta:<%= answer.answer %></p>
+            <%= link_to "responder", edit_answer_path(answer)  %>
+          </div>
+        </div>
+        <%end %>
+    </div>
+
+<div class="col-md-6">
+</div>
+
