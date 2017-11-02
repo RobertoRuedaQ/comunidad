@@ -1,0 +1,35 @@
+<%= form_with(model: @product, local: true) do |form| %>
+  <% if @product.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
+
+      <ul>
+      <% @product.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name, t('Nombre del producto') %>
+    <%= form.text_field :name, id: :product_name, class:"form-control" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :price, t('Precio') %>
+    <%= form.number_field :price, id: :product_price, class:"form-control" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :units, t('inventario') %>
+    <%= form.number_field :units, id: :product_units, class:"form-control" %>
+  </div>
+  
+  <div class="field">
+    <%= form.hidden_field :store_id, value: current_user.store.id %>
+  </div>
+  <div class="actions">
+    <%= image_submit_tag("btn-crear.png") %>
+  </div>
+<% end %>
