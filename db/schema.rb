@@ -150,6 +150,7 @@ ActiveRecord::Schema.define(version: 20171102145830) do
     t.datetime "updated_at", null: false
     t.integer "units"
     t.bigint "store_id"
+    t.boolean "recommended", default: false
     t.index ["store_id"], name: "index_products_on_store_id"
   end
 

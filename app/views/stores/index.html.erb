@@ -1,13 +1,17 @@
-<div class="row">
   <h1>Tiendas para ti</h1>
+
+      <% @products.each do |product| %>
+      <% if product.recommended? %>
+        <%= product.name %> - <%= product.store.name %>
+        <%end %>
+      <% end %>
+    </div>
+  </div>
+
   <% @stores.each do |store| %>
-  <div class="col-md-2"></div>
-  <div class="col-md-8">
     <%= link_to store_path(store) do %>
       <%= image_tag(store.image_url, :width => 300, :height => 150) if store.image.present? %>
     <%end %>
   <% end %>
-  </div>
-  <div class="col-md-2"></div>
-</div>
+
 

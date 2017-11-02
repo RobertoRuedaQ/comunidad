@@ -1,0 +1,20 @@
+<div class="row">
+	<div class="col-md-6">
+		<div class="container">
+			<table class="table">
+				<% @orders.each do |order| %>
+				<tr>
+					<td><%= order.order_items.collect{|x| x.product_name} %></td>
+					<td>$<%= order.total %></td>
+					<td><%= order.user.apartment.apto %></td>
+					<td><%= order.order_status.name %></td>
+					<%if order.order_status.id == 1 %>
+					<td><%= button_to "despachar", order_path(order), method: :patch %></td>
+					<%end %>
+				</tr>
+				<%end%>
+			</table>
+		</div>
+	</div>
+</div>
+	

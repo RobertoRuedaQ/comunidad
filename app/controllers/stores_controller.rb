@@ -5,6 +5,7 @@ class StoresController < ApplicationController
   # GET /stores.json
   def index
     @stores = Store.all
+    @products = Product.all
   end
 
   # GET /stores/1

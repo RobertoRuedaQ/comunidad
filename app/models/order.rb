@@ -1,10 +1,10 @@
 class Order < ApplicationRecord
+  belongs_to :user
   belongs_to :order_status
   has_many :order_items
   before_validation :set_order_status, on: :create
 
   before_save :update_total
-  belongs_to :user
   
 
   def total

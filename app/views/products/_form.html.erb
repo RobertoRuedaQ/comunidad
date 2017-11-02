@@ -25,6 +25,11 @@
     <%= form.label :units, t('inventario') %>
     <%= form.number_field :units, id: :product_units, class:"form-control" %>
   </div>
+
+  <div class="field">
+    <%= form.label :recommended, t('¿Es un producto destacado?')%>
+    <%= form.check_box :recommended, class: "checkbox"%>
+  </div>
   
   <div class="field">
     <%= form.hidden_field :store_id, value: current_user.store.id %>

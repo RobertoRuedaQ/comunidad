@@ -6,10 +6,12 @@ Rails.application.routes.draw do
   
   resources :resolutions, only: [:index, :update, :destroy]
   resources :answers
-  resources :products
-  resource :cart, only: [:show]
-  resources :order_items, only: [:create, :update, :destroy]
   resources :stores
+  resources :products
+  resources :cart, only: [:show]
+  resources :orders, only: [:index, :update]
+  resources :order_items, only: [:create, :update, :destroy]
+  resources :order_statuses
 
   resources :decisions
   resources :children
@@ -24,13 +26,6 @@ Rails.application.routes.draw do
   resources :apartments
   resources :werehouses
 
-  namespace :delivery do
-    resources :products
-    resources :orders
-    resources :order_statuses
-    resources :order_items
-  end
-  
   namespace :admin do
     resources :users
     resources :advertisements
