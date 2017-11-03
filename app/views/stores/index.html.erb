@@ -5,8 +5,6 @@
         <%= product.name %> - <%= product.store.name %>
         <%end %>
       <% end %>
-    </div>
-  </div>
 
   <% @stores.each do |store| %>
     <%= link_to store_path(store) do %>
