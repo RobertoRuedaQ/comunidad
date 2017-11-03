@@ -1,7 +1,7 @@
 // Place all the styles related to the Orders controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-@media (width : 800px) and (height : 480px) {
+@media (max-width : 799px) and (max-height : 479px) {
   #sidebar{
         display: none;
     }
