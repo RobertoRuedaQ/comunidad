@@ -37,7 +37,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         </div>
       </div>
     </header>
-    <%= render 'sidebar' %>
+    <%= render 'sidebar' unless @disable_nav %>
     <section id="main-content">
       <section class="wrapper">
         <div class="container-data">

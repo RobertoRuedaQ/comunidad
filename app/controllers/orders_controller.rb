@@ -1,5 +1,6 @@
 class OrdersController < ApplicationController
 	def index
+    @disable_nav = true
     @orders = Order.all
   end
   
