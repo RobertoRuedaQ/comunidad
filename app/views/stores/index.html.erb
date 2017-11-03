@@ -1,11 +1,5 @@
   <h1>Tiendas para ti</h1>
-<!-- 
-      <% @products.each do |product| %>
-      <% if product.recommended? %>
-        <%= product.name %> - <%= product.store.name %>
-        <%end %>
-      <% end %> -->
-
+  
   <% @stores.each do |store| %>
     <%= link_to store_path(store) do %>
       <%= image_tag(store.image_url, :width => 300, :height => 150) if store.image.present? %>
