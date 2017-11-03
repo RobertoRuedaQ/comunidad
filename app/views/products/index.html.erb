@@ -6,5 +6,4 @@
       <%= render "product_row", product: product, order_item: @order_item %>
     <% end %>
   </div>
-  <%= link_to "#{current_order.order_items.size} Items in Cart ( #{number_to_currency current_order.total} )", cart_path, class: "btn btn-link" %>
 </div>
