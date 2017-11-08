@@ -301,6 +301,7 @@
     .wrapper .container-data .col-md-6{
       align-content: center;
       margin-top: 20px;
+      margin-left: 0px;
     }
 
     .wrapper .container-data .col-md-6 img{
