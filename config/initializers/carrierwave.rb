@@ -18,7 +18,7 @@
 #   }
 #   else
 #     config.storage :file
-#     config.enable_processing = false if Rails.env.test?
+    config.enable_processing = true if Rails.env.test?
 #   end
 
 #   config.fog_directory  = 'directory'                             # required

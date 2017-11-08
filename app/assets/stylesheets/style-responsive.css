@@ -305,8 +305,11 @@
     }
 
     .wrapper .container-data .col-md-6 img{
-      left: auto !important;
+      left: auto;
       right: auto;
+      max-width: 250px;
+      max-height: 300px;
+      margin: 0 !important;
     }
 
     .wrapper .container-data input.ggg{
