@@ -30,6 +30,11 @@
     <%= form.label :recommended, t('¿Es un producto destacado?')%>
     <%= form.check_box :recommended, class: "checkbox"%>
   </div>
+
+  <div class="field">
+    <%= form.label :image, t('Imagen') %>
+    <%= form.file_field :image %>
+  </div>
   
   <div class="field">
     <%= form.hidden_field :store_id, value: current_user.store.id %>
