@@ -14,7 +14,7 @@ class ProductsController < ApplicationController
   	if @product.save
       redirect_to root_path
     else
-      redirect_to new_product_path
+      redirect_to new_product_path, notice: @product.errors.each
     end
   end
 
