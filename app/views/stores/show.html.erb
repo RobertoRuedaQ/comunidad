@@ -1,12 +1,12 @@
 <p id="notice"><%= notice %></p>
 <div class="row">
-	<%= image_tag(@store.image_url, :width => 400, :height => 300) if @store.image.present? %>
-	<div class="col-md-6">
+	<%= image_tag(@store.image_url, :width => 300, :height => 200) if @store.image.present? %>
+</div>
+<div class="row">
     <% @store.products.each do |product| %>
-    <%= image_tag(product.image_url, :width => 200, :height => 200) if product.image.present? %>
+  <div class="col-md-12">
+    <%= image_tag(product.image_url, :width => 350, :height => 350) if product.image.present? %>
       <h4><%= product.name %></small></h4>
-  </div>
-  <div class="col-md-6">
       <%= form_for :order_item, url: order_items_path, remote: true do |f| %>
         <h4 class="text-right">Valor unidad: <span style="color: green"><%= number_to_currency product.price %></span></h4>
         <div class="input-group">
