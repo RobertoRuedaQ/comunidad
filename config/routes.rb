@@ -40,6 +40,7 @@ Rails.application.routes.draw do
     resources :decisions
     resources :hobbies
     resources :products
+    resources :order_statuses
     root to: "users#index"
   end
 
