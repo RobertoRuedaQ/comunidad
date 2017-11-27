@@ -1,6 +1,6 @@
 class StoresController < ApplicationController
   before_action :set_store, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_bussiness!, on: :create
   # GET /stores
   # GET /stores.json
   def index
@@ -70,6 +70,6 @@ class StoresController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def store_params
-      params.require(:store).permit(:name, :image, :user_id)
+      params.require(:store).permit(:name, :image, :bussiness_id)
     end
 end

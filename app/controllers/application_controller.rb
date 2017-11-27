@@ -25,6 +25,15 @@ class ApplicationController < ActionController::Base
       redirect_to new_user_session_path, :notice => 'Recuerda iniciar sesión o registrarse'
     end
   end
+
+  def authenticate_bussiness!
+    if bussiness_signed_in?
+      super
+    else
+      redirect_to new_bussiness_session_path, :notice => 'Recuerda iniciar sesión o registrarse'
+    end
+  end
+
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [:email, :name,:last_name,:gender,:document_type,:document_id,:cellphone,:day_of_birth,:profession,:offer_services,:owner,:active,:admin, :apartment_id,hobbies_ids:[]])
     devise_parameter_sanitizer.permit(:user_update, keys: [:email, :name,:last_name,:gender,:document_type,:document_id,:cellphone,:day_of_birth,:profession,:offer_services,:owner,:active,:admin, :apartment_id,hobbies_ids:[]])

@@ -1,5 +1,6 @@
 class Order < ApplicationRecord
   belongs_to :user
+  belongs_to :bussiness
   belongs_to :order_status
   has_many :order_items
   before_validation :set_order_status, on: :create

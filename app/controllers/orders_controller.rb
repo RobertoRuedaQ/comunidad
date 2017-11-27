@@ -1,7 +1,8 @@
 class OrdersController < ApplicationController
+  before_action :authenticate_bussiness!
 	def index
     @disable_nav = true
-    @orders = current_user.orders.all
+    @orders = current_bussiness.orders.all
   end
   
   def create

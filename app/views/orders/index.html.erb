@@ -5,7 +5,7 @@
 				<% @orders.each do |order| %>
 				<tr>
 					<%if order.order_status.id == 1 %>
-					<td><%= order.order_items.collect{|x| x.product_name} %></td>
+					<td><%= order.order_items.collect{|x| x.product_name}.to_s %></td>
 					<td>$<%= order.total %></td>
 					<td><%= order.user.apartment.apto %></td>
 					<td><%= order.order_status.name %></td>

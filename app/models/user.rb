@@ -11,7 +11,6 @@ before_create -> {self.token = generate_token}
   has_many :hobbies, through: :user_hobbies
   has_many :chats
   has_many :orders
-  has_one :store
   
 
   #validacion de registro

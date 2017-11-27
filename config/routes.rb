@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+
+
+  devise_for :bussinesses, controllers: {
+  sessions: 'bussiness/sessions',
+  registrations: 'bussiness/registrations'
+  }
   resources :stores
   root to: "pages#home"
   get "pages/show", page:'family', as: 'family'
