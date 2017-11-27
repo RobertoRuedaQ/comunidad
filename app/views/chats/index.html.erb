@@ -11,7 +11,7 @@
           </div>
           <!-- contenedor de comentarios -->
           <% @chats.each do |chat| %>
-              <div class="msg_container base_sent">
+              <div class="msg_container base_sent" id="messages">
                 <div class="messages row">
                   <% if chat.user == current_user %>
                     <div class="col-md-10 msg_sent">

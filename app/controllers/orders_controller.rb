@@ -1,7 +1,7 @@
 class OrdersController < ApplicationController
 	def index
     @disable_nav = true
-    @orders = Order.all
+    @orders = current_user.orders.all
   end
   
   def create
