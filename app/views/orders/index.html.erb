@@ -9,7 +9,7 @@
 					<td>$<%= order.total %></td>
 					<td><%= order.user.apartment.apto %></td>
 					<td><%= order.order_status.name %></td>
-					<td><%= button_to "despachar", order_path(order), method: :patch %></td>
+					<td><%= button_to "despachar", order_path(order), method: :patch, class: "myButton"%></td>
 					<%end %>
 				</tr>
 				<%end%>
