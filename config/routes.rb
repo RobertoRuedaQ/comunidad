@@ -5,6 +5,11 @@ Rails.application.routes.draw do
   sessions: 'bussiness/sessions',
   registrations: 'bussiness/registrations'
   }
+
+  authenticated :bussiness do
+    root 'orders#index', as: :bussiness_root
+  end
+
   resources :stores
   root to: "pages#home"
   get "pages/show", page:'family', as: 'family'
