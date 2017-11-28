@@ -3,5 +3,4 @@
 	console.log("<%= @order_item.errors.full_messages %>")
 <% else %>
 	alert("Tu order a sido procesada")
-  $(".cart-text").html("<%= escape_javascript(render 'layouts/cart_text') %>")
 <% end %>
