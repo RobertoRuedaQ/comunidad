@@ -1,5 +1,7 @@
 <% if @order.errors.any? || @order_item.errors.any? %>
-console.log("<%= @order.errors.full_messages %>")
+	console.log("<%= @order.errors.full_messages %>")
+	console.log("<%= @order_item.errors.full_messages %>")
 <% else %>
+	alert("Tu order a sido procesada")
   $(".cart-text").html("<%= escape_javascript(render 'layouts/cart_text') %>")
 <% end %>

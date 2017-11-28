@@ -1,5 +1,7 @@
 <% if @order.errors.any? || @order_item.errors.any? %>
-alert("not valid.")
+var error = <% @order.errors.messages.each %>
+	console.log(error)
 <% else %>
+	alert("tu order fue procesada")
   $(".cart-text").html("<%= escape_javascript(render 'layouts/cart_text') %>")
 <% end %>
