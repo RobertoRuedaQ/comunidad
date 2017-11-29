@@ -1,4 +1,5 @@
 class OrdersController < ApplicationController
+
   before_action :authenticate_bussiness!
 	def index
     @disable_nav = true
@@ -19,6 +20,7 @@ class OrdersController < ApplicationController
     @order.update!(order_status_id: 2)
     redirect_to orders_path
   end
+  
 
 private
 
