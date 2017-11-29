@@ -4,18 +4,20 @@
 <div class="row">
     <% @store.products.each do |product| %>
   <div class="col-md-4">
-    <%= image_tag(product.image_url, :width => 350, :height => 350) if product.image.present? %>
-      <h4><%= product.name %></small></h4>
-      <%= form_for :order_item, url: order_items_path, remote: true do |f| %>
-        <h4 class="text-right">Valor unidad: <span style="color: green"><%= number_to_currency product.price %></span></h4>
-        <div class="input-group">
-          <%= f.number_field :quantity, value: 1, class: "form-control", min: 1 %>
-          <div class="input-group-btn">
-            <%= f.hidden_field :product_id, value: product.id %>
-            <%= f.submit "Pedir", class: "btn btn-primary", id: "completeOrder" %>
-          </div>
-        </div>    
-      <% end %>
+    <div class="container centered">
+      <%= image_tag(product.image_url, :width => 250, :height => 250, class: "center") if product.image.present? %>
+        <h4><%= product.name %></small></h4>
+        <%= form_for :order_item, url: order_items_path, remote: true do |f| %>
+          <h4 class="text-right">Valor unidad: <span style="color: green"><%= number_to_currency product.price %></span></h4>
+          <div class="input-group">
+            <%= f.number_field :quantity, value: 1, class: "form-control", min: 1 %>
+            <div class="input-group-btn">
+              <%= f.hidden_field :product_id, value: product.id %>
+              <%= f.submit "Pedir", class: "btn btn-primary", id: "completeOrder" %>
+            </div>
+          </div>    
+        <% end %>
+    </div>
   </div>
   <%end%>
 </div>

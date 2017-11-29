@@ -106,6 +106,14 @@ input[type=image]{
   align-items: center;
 }
 
+.col-md-4 .centered{
+    padding: 0 10px;
+}
+
+.col-md-4 .centered img{
+    margin: 0 50px;
+}
+
     
 /*sidebar navigation*/
 #sidebar {
