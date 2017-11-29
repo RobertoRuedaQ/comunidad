@@ -1,9 +1,10 @@
 class OrdersController < ApplicationController
+  respond_to :html, :json
 
   before_action :authenticate_bussiness!
 	def index
     @disable_nav = true
-    @orders = current_bussiness.orders.all
+     respond_with @orders = current_bussiness.orders.all
   end
   
   def create

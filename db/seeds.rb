@@ -5,7 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-# require 'csv'
+require 'csv'
 
 Hobby.create(name: "Deporte")
 Hobby.create(name: "Gastronomía")
@@ -28,7 +28,7 @@ csv.each do |row|
 end
 
 
-OrderStatus.create! id: 1, name: "In Progress"
-OrderStatus.create! id: 2, name: "Placed"
-OrderStatus.create! id: 3, name: "Shipped"
-OrderStatus.create! id: 4, name: "Cancelled"
+OrderStatus.create! id: 1, name: "In ProgreEn progreso"
+OrderStatus.create! id: 2, name: "Confirmado"
+OrderStatus.create! id: 3, name: "Entregado"
+OrderStatus.create! id: 4, name: "Cancelado"
