@@ -26,4 +26,4 @@ OrderStatus.create! id: 3, name: "Entregado"
 OrderStatus.create! id: 4, name: "Cancelado"
 
 
-User.create(email: "admin@correo.co", name:"admin",cellphone: 1234567890 ,active: true ,admin:true , apartment_id: 1)
+User.create(email: "admin@correo.co", password: "123456", name:"admin",cellphone: 1234567890 ,active: true ,admin:true , apartment_id: 1)

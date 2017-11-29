@@ -1,7 +1,7 @@
 class StoresController < ApplicationController
   before_action :set_store, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
-  # before_action :authenticate_bussiness!, on: :create
+  before_action :authenticate_bussiness!, on: :new
   # GET /stores
   # GET /stores.json
   def index
