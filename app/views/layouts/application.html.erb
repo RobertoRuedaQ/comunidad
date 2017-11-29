@@ -18,25 +18,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 </head>
 <body>
   <section id="container">
-    <header class="header fixed-top clearfix">
-      <div class="brand">
-        <%= image_tag("logo.jpg") %>
-      </div>
-      <div class="user-info">
-        <% if user_signed_in? %>
-        <p>BIENVENIDO<br>
-          <%= link_to edit_user_registration_path do %>
-            <%= current_user.name.upcase %> <%= current_user.last_name.upcase %>
-          <%end %>
-        </p>
-        <%else %>
-        <p>No has iniciado sesión</p>
-        <% end %>
-        <div class="sidebar-toggle-box">
-          <div class="fa fa-bars"></div>
-        </div>
-      </div>
-    </header>
+    <%= render 'header' unless @disable_nav %>
     <%= render 'sidebar' unless @disable_nav %>
     <section id="main-content">
       <section class="wrapper">
