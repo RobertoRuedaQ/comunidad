@@ -1,0 +1,12 @@
+<h1>Pedidos realizados</h1>
+<table class="table">
+	<p> <h4>Venta total por medio del app:</h4>  <%= number_to_currency @total_sell %></p>
+<% @sell.each do |order| %>
+	<tr>
+		<td><%= order.order_items.collect{|x| x.product_name} %></td>
+		<td>$<%= order.total %></td>
+		<td><%= order.user.apartment.apto %></td>
+		<td><%= order.created_at %></td>
+	</tr>
+<%end %>
+</table>

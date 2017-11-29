@@ -24,6 +24,8 @@ Rails.application.routes.draw do
   resources :order_items, only: [:create, :update, :destroy]
   resources :order_statuses
 
+  get "orders/report", as: "report"
+
   resources :decisions
   resources :children
   resources :chats
@@ -52,6 +54,7 @@ Rails.application.routes.draw do
     resources :hobbies
     resources :products
     resources :order_statuses
+    resources :orders
     root to: "users#index"
   end
 

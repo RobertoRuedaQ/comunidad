@@ -20,6 +20,12 @@ class OrdersController < ApplicationController
     @order.update!(order_status_id: 2)
     redirect_to orders_path
   end
+
+  def report
+     @disable_nav = true
+    @sell = current_bussiness.orders.where("order_status_id = 2")
+    @total_sell = current_bussiness.orders.where('order_status_id = 2').pluck(:total).sum
+  end
   
 
 private
