@@ -107,11 +107,14 @@ input[type=image]{
 }
 
 .col-md-4 .centered{
-    padding: 0 10px;
+    padding: 20px 0px;
+    max-width: 240px;
 }
 
 .col-md-4 .centered img{
-    margin: 0 50px;
+    padding: 10px 10px;
+    max-width: 200px;
+    max-height: 200px;
 }
 
     
