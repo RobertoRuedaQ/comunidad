@@ -68,7 +68,7 @@
 
     <div class="field">
       <%= f.label :hobbies, t('Intereses')%><br />
-      <%= f.collection_check_boxes :hobby_ids, Hobby.all, :name, :name do |b| %>
+      <%= f.collection_check_boxes :hobbies_ids, Hobby.all, :id, :name do |b| %>
         <%= b.label  %>
         <%= b.check_box %>
       <%end %>

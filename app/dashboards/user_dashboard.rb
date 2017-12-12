@@ -34,7 +34,7 @@ class UserDashboard < Administrate::BaseDashboard
     day_of_birth: Field::DateTime,
     profession: Field::String,
     offer_services: Field::Boolean,
-    hobbies_id: Field::String,
+    hobbies_ids: Field::String,
     owner: Field::Boolean,
     active: Field::Boolean,
     admin: Field::Boolean,
@@ -85,7 +85,7 @@ class UserDashboard < Administrate::BaseDashboard
     :day_of_birth,
     :profession,
     :offer_services,
-    :hobbies_id,
+    :hobbies_ids,
     :owner,
     :active,
     :admin

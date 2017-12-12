@@ -7,12 +7,12 @@
 
 <p>
   <strong>Image:</strong>
-  <%= image_tag(@promo.imagen_url, :width => 600, :height => 600) if @promo.imagen.present? %>
+  <%= image_tag(@promo.image_url, :width => 600, :height => 600) if @promo.image.present? %>
 </p>
 
 <p>
   <strong>Hobbies:</strong>
-  <%= @promo.hobbies %>
+  <%= @promo.hobby.name %>
 </p>
 
 <%= link_to 'Edit', edit_promo_path(@promo) %> |

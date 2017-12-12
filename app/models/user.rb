@@ -7,8 +7,9 @@ class User < ApplicationRecord
 before_create -> {self.token = generate_token}
 #relaciones
   belongs_to :apartment
-  has_many :user_hobbies
-  has_many :hobbies, through: :user_hobbies
+  # has_many :user_hobbies
+  has_many :hobbies
+  # , through: :user_hobbies
   has_many :chats
   has_many :orders
   

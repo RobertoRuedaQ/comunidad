@@ -4,7 +4,8 @@ class PromosController < ApplicationController
   # GET /promos
   # GET /promos.json
   def index
-    @promos = Promo.all
+    @hobbies = current_user.hobbies_ids
+    @promos = Promo.where(hobby_id: 1)
   end
 
   # GET /promos/1
@@ -69,6 +70,6 @@ class PromosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def promo_params
-      params.require(:promo).permit(:url, :image, :hobbies_id)
+      params.require(:promo).permit(:url, :image, :hobby_id)
     end
 end

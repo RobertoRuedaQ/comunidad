@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171212180935) do
+ActiveRecord::Schema.define(version: 20171212203246) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -177,10 +177,10 @@ ActiveRecord::Schema.define(version: 20171212180935) do
   create_table "promos", force: :cascade do |t|
     t.string "url"
     t.string "image"
-    t.bigint "hobbies_id"
+    t.bigint "hobby_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["hobbies_id"], name: "index_promos_on_hobbies_id"
+    t.index ["hobby_id"], name: "index_promos_on_hobby_id"
   end
 
   create_table "rpush_apps", force: :cascade do |t|
@@ -283,7 +283,7 @@ ActiveRecord::Schema.define(version: 20171212180935) do
     t.date "day_of_birth"
     t.string "profession"
     t.boolean "offer_services", default: false
-    t.string "hobbies_id"
+    t.string "hobbies_ids"
     t.boolean "owner", default: false
     t.boolean "active", default: false
     t.boolean "admin", default: false
@@ -352,7 +352,7 @@ ActiveRecord::Schema.define(version: 20171212180935) do
   add_foreign_key "orders", "order_statuses"
   add_foreign_key "orders", "users"
   add_foreign_key "pets", "apartments"
-  add_foreign_key "promos", "hobbies", column: "hobbies_id"
+  add_foreign_key "promos", "hobbies"
   add_foreign_key "user_hobbies", "hobbies"
   add_foreign_key "user_hobbies", "users"
   add_foreign_key "vehicles", "apartments"
