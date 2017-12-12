@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
 
+  resources :promos
   devise_for :bussinesses, controllers: {
   sessions: 'bussiness/sessions',
   registrations: 'bussiness/registrations'

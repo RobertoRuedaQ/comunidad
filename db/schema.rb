@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171128164543) do
+ActiveRecord::Schema.define(version: 20171212180935) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -174,6 +174,75 @@ ActiveRecord::Schema.define(version: 20171128164543) do
     t.index ["store_id"], name: "index_products_on_store_id"
   end
 
+  create_table "promos", force: :cascade do |t|
+    t.string "url"
+    t.string "image"
+    t.bigint "hobbies_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["hobbies_id"], name: "index_promos_on_hobbies_id"
+  end
+
+  create_table "rpush_apps", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "environment"
+    t.text "certificate"
+    t.string "password"
+    t.integer "connections", default: 1, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "type", null: false
+    t.string "auth_key"
+    t.string "client_id"
+    t.string "client_secret"
+    t.string "access_token"
+    t.datetime "access_token_expiration"
+  end
+
+  create_table "rpush_feedback", force: :cascade do |t|
+    t.string "device_token", limit: 64, null: false
+    t.datetime "failed_at", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "app_id"
+    t.index ["device_token"], name: "index_rpush_feedback_on_device_token"
+  end
+
+  create_table "rpush_notifications", force: :cascade do |t|
+    t.integer "badge"
+    t.string "device_token", limit: 64
+    t.string "sound"
+    t.text "alert"
+    t.text "data"
+    t.integer "expiry", default: 86400
+    t.boolean "delivered", default: false, null: false
+    t.datetime "delivered_at"
+    t.boolean "failed", default: false, null: false
+    t.datetime "failed_at"
+    t.integer "error_code"
+    t.text "error_description"
+    t.datetime "deliver_after"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.boolean "alert_is_json", default: false
+    t.string "type", null: false
+    t.string "collapse_key"
+    t.boolean "delay_while_idle", default: false, null: false
+    t.text "registration_ids"
+    t.integer "app_id", null: false
+    t.integer "retries", default: 0
+    t.string "uri"
+    t.datetime "fail_after"
+    t.boolean "processing", default: false, null: false
+    t.integer "priority"
+    t.text "url_args"
+    t.string "category"
+    t.boolean "content_available", default: false
+    t.text "notification"
+    t.boolean "mutable_content", default: false
+    t.index ["delivered", "failed"], name: "index_rpush_notifications_multi", where: "((NOT delivered) AND (NOT failed))"
+  end
+
   create_table "stores", force: :cascade do |t|
     t.string "name"
     t.string "image"
@@ -283,6 +352,7 @@ ActiveRecord::Schema.define(version: 20171128164543) do
   add_foreign_key "orders", "order_statuses"
   add_foreign_key "orders", "users"
   add_foreign_key "pets", "apartments"
+  add_foreign_key "promos", "hobbies", column: "hobbies_id"
   add_foreign_key "user_hobbies", "hobbies"
   add_foreign_key "user_hobbies", "users"
   add_foreign_key "vehicles", "apartments"

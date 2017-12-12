@@ -1,0 +1,32 @@
+<%= form_with(model: promo, local: true) do |form| %>
+  <% if promo.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(promo.errors.count, "error") %> prohibited this promo from being saved:</h2>
+
+      <ul>
+      <% promo.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :url %>
+    <%= form.text_field :url, id: :promo_url %>
+  </div>
+
+  <div class="field">
+    <%= form.label :image %>
+    <%= form.file_field :image, id: :promo_image %>
+  </div>
+
+  <div class="field">
+    <%= form.label :hobbies_id, t('Hobby') %>
+    <%= form.collection_select :hobbies_id, Hobby.all, :id, :name %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @promo.url %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= image_tag(@promo.imagen_url, :width => 600, :height => 600) if @promo.imagen.present? %>
+</p>
+
+<p>
+  <strong>Hobbies:</strong>
+  <%= @promo.hobbies %>
+</p>
+
+<%= link_to 'Edit', edit_promo_path(@promo) %> |
+<%= link_to 'Back', promos_path %>

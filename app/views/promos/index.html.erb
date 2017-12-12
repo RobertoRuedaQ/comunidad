@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Promos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Url</th>
+      <th>Image</th>
+      <th>Hobbies</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @promos.each do |promo| %>
+      <tr>
+        <td><%= promo.url %></td>
+        <td><%= image_tag(promo.imagen_url, :width => 200, :height => 200) if promo.imagen.present? %></td>
+        <td><%= promo.hobbies %></td>
+        <td><%= link_to 'Show', promo %></td>
+        <td><%= link_to 'Edit', edit_promo_path(promo) %></td>
+        <td><%= link_to 'Destroy', promo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Promo', new_promo_path %>
