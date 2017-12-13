@@ -4,8 +4,8 @@ class PromosController < ApplicationController
   # GET /promos
   # GET /promos.json
   def index
-    @hobbies = current_user.hobbies_ids
-    @promos = Promo.where(hobby_id: 1)
+    @hobbies = current_user.hobbies_ids.map {|x| x.to_i}
+    @promos = Promo.where({hobby_id: current_user.hobbies_ids})
   end
 
   # GET /promos/1

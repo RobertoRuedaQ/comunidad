@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171212203246) do
+ActiveRecord::Schema.define(version: 20171213142430) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -283,7 +283,7 @@ ActiveRecord::Schema.define(version: 20171212203246) do
     t.date "day_of_birth"
     t.string "profession"
     t.boolean "offer_services", default: false
-    t.string "hobbies_ids"
+    t.text "hobbies_ids", default: [], array: true
     t.boolean "owner", default: false
     t.boolean "active", default: false
     t.boolean "admin", default: false
