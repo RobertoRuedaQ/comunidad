@@ -1,11 +1,14 @@
 class PromosController < ApplicationController
   before_action :set_promo, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!
   # GET /promos
   # GET /promos.json
   def index
     @hobbies = current_user.hobbies_ids.map {|x| x.to_i}
-    @promos = Promo.where({hobby_id: current_user.hobbies_ids})
+    if user_signed_in?
+      @promos = Promo.where({hobby_id: current_user.hobbies_ids})
+    else
+      @promos = Promo.all
+    end
   end
 
   # GET /promos/1

@@ -1,9 +1,5 @@
 <p id="notice"><%= notice %></p>
- <%= @hobbies %>
-<h1>Promos</h1>
+<h1>Promociones para ti</h1>
     <% @promos.each do |promo| %>
-    <a href="<%= promo.url %>"><%= image_tag(promo.image_url, :width => 200, :height => 200) if promo.image.present? %></a>
+    <a href="<%= promo.url %>"><%= image_tag(promo.image_url, :width => 150, :height => 150, class: "promo-img") if promo.image.present? %></a>
     <% end %>
-
-
-<%= link_to 'New Promo', new_promo_path %>
