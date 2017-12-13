@@ -1,0 +1,24 @@
+<div class="thumbnail">
+  <div class="row">
+    <div class="col-md-6">
+        <div class="media">
+                <%= image_tag(@service.photo_url, :width => 100, :height => 100) if @service.photo.present? %>
+        </div>
+    </div>
+    <div class="col-md-5">
+      <div class="media-body">
+          <h3 class="media-heading"><%= @service.name %> <small><%= @service.category %></small></h3>
+          <h4><i class="fa fa-map-marker" aria-hidden="true"></i> <%= @service.address %></h4>
+          <h4><i class="fa fa-phone" aria-hidden="true"></i> <%= @service.phone %> </h4>
+          <h4><i class="fa fa-clock-o" aria-hidden="true"></i> <%= @service.schedule %></h4>
+          <hr style="margin:8px auto">
+          <%@service.tags.each do |tag| %>
+          <span class="label label-default" style="font-size: 14px;"><%= tag %></span>
+          <%end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<%= link_to 'Regresar', services_path %>

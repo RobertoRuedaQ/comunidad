@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171213142430) do
+ActiveRecord::Schema.define(version: 20171213183029) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -241,6 +241,18 @@ ActiveRecord::Schema.define(version: 20171213142430) do
     t.text "notification"
     t.boolean "mutable_content", default: false
     t.index ["delivered", "failed"], name: "index_rpush_notifications_multi", where: "((NOT delivered) AND (NOT failed))"
+  end
+
+  create_table "services", force: :cascade do |t|
+    t.string "address"
+    t.bigint "phone"
+    t.string "name"
+    t.string "photo"
+    t.text "tags", array: true
+    t.string "schedule"
+    t.string "category"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "stores", force: :cascade do |t|
