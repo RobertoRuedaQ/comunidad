@@ -3,79 +3,88 @@
     <!-- sidebar menu start-->
     <div class="leftside-navigation">
       <ul class="sidebar-menu" id="nav-accordion">
-        <li>
-          <%= link_to root_path do %>
-            <%= image_tag("home.png") %> INICIO
-          <% end %>
-        </li>
-        <%if current_user %>
-        <li>
-          <%= link_to family_path do %>
-            <%= image_tag("chat.png") %> FAMILIA
-          <% end %>
-        </li>
-        <li>
-          <%= link_to stores_path do %>
-            <%= image_tag("domicilios.png") %> DOMICILIOS
-          <% end %>
-        </li>
-          <% if current_user && current_user.active%>
-            <li>
-              <%= link_to advertisements_path do %>
-                <%= image_tag("clasificados.png") %> CLASIFICADOS
-              <% end %>
-            </li>
-            <li>
-              <%= link_to common_areas_path do %>
-                <%= image_tag("calendario.png") %> ÁREAS COMUNES
-              <% end %>
-            </li>
-            <li>
-              <%= link_to complaints_path do %>
-                <%= image_tag("complaints.png") %> PQRS
-              <% end %>
-            </li>
-            <%if current_user && current_user.active&&current_user.owner %>
-              <li>
-                <%= link_to decisions_path do %>
-                  <%= image_tag("decision.png") %>VOTACION
-                <% end %>
-              </li>
-            <%end %>
-            <%if current_user && current_user.active&&current_user.admin %>
-              <li>
-                <%= link_to new_decision_path do %>
-                  <%= image_tag("decision.png") %> CREAR VOTACION
-                <% end %>
-              </li>
-              <li>
-                <%= link_to new_newsletter_path do %>
-                  <%= image_tag("newsletter.png") %> CREAR ANUNCIO
-                <% end %>
-              </li>
-              <li>
-                <%= link_to resolutions_path do %>
-                  <%= image_tag("newsletter.png") %> APROBAR SOLICITUDES
-                <% end %>
-              </li>
-              <li>
-                <%= link_to activation_path do %>
-                  <%= image_tag("usuarios.png") %> USUARIOS
-                <% end %>
-              </li>
-              <li>
-                <%= link_to answers_path do %>
-                  <%= image_tag("complaints.png") %> RESPONDER QUEJAS
-                <% end %>
-              </li>
-              <li>
-                <%= link_to workers_path do %>
-                  <%= image_tag("usuarios.png") %> TRABAJADORES
-                <% end %>
-              </li>
-            <%end %>
-          <%end %>
+        <%if current_user && current_user.admin == false %>
+          <li>
+            <%= link_to root_path do%>
+              <%= image_tag("home.png") %> INICIO
+            <% end %>
+          </li>
+          <li>
+            <%= link_to family_path do %>
+              <%= image_tag("chat.png") %> FAMILIA
+            <% end %>
+          </li>
+          <li>
+            <%= link_to stores_path do %>
+              <%= image_tag("domicilios.png") %> DOMICILIOS
+            <% end %>
+          </li>
         <%end %>
+
+        <% if current_user && current_user.active && current_user.admin == false%>
+          <li>
+            <%= link_to advertisements_path do %>
+              <%= image_tag("clasificados.png") %> CLASIFICADOS
+            <% end %>
+          </li>
+          <li>
+            <%= link_to services_path do %>
+              <%= image_tag("complaints.png") %> DIRECTORIO DE SERVICIOS
+            <% end %>
+          </li>
+          <li>
+            <%= link_to common_areas_path do %>
+              <%= image_tag("calendario.png") %> ÁREAS COMUNES
+            <% end %>
+          </li>
+          <li>
+            <%= link_to complaints_path do %>
+              <%= image_tag("complaints.png") %> PQRS
+            <% end %>
+          </li>
+        <%end %>
+
+        <%if current_user && current_user.active&&current_user.owner %>
+          <li>
+            <%= link_to decisions_path do %>
+              <%= image_tag("decision.png") %>VOTACION
+            <% end %>
+          </li>
+        <%end %>
+
+        <%if current_user && current_user.active&&current_user.owner && current_user.admin %>
+          <li>
+            <%= link_to new_decision_path do %>
+              <%= image_tag("decision.png") %> CREAR VOTACION
+            <% end %>
+          </li>
+          <li>
+            <%= link_to new_newsletter_path do %>
+              <%= image_tag("newsletter.png") %> CREAR ANUNCIO
+            <% end %>
+          </li>
+          <li>
+            <%= link_to resolutions_path do %>
+              <%= image_tag("newsletter.png") %> APROBAR SOLICITUDES
+            <% end %>
+          </li>
+          <li>
+            <%= link_to activation_path do %>
+              <%= image_tag("usuarios.png") %> USUARIOS
+            <% end %>
+          </li>
+          <li>
+            <%= link_to answers_path do %>
+              <%= image_tag("complaints.png") %> RESPONDER QUEJAS
+            <% end %>
+          </li>
+          <li>
+            <%= link_to workers_path do %>
+              <%= image_tag("usuarios.png") %> TRABAJADORES
+            <% end %>
+          </li>
+        <%end %>
+          
       </ul>
       <ul class="sidebar-menu" id="nav-accordion">
         <% if current_user %>

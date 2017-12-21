@@ -1,26 +1,48 @@
 <div class="row">
+
+  <% flash.each do |key, value| %>
+    <div class="alert alert-<%= key %>"><%= value %></div>
+  <% end %>
+
 <div class="col-md-6">
   <h2>Iniciar sesión</h2>
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-    <div class="field">
-      <%= f.label :email, t('Correo electrónico') %><br />
-      <%= f.email_field :email, autofocus: true,class: "form-control ggg" %>
+    <div class="row">
+      <div class="col-md-3">
+        <%= f.label :email, t('Correo electrónico') %>
+      </div>
+      <div class="col-md-9">
+        <%= f.email_field :email, autofocus: true,class: "form-control ggg session-input" %>
+      </div>
     </div>
-
-    <div class="field">
-      <%= f.label :password, t('Contraseña') %><br />
-      <%= f.password_field :password, autocomplete: "off" ,class: "form-control ggg"%>
+    
+    <div class="row">
+      <div class="col-md-3">
+        <%= f.label :password, t('Contraseña') %><br />
+      </div>
+      <div class="col-md-9">
+        <%= f.password_field :password, autocomplete: "off" ,class: "form-control ggg session-input"%>
+      </div>
     </div>
-
+    
     <% if devise_mapping.rememberable? -%>
-      <div class="field">
-        <%= f.check_box :remember_me %>
+    <div class="row">
+      <div class="col-md-3">
         <%= f.label :remember_me, t("Recordarme") %>
       </div>
+      <div class="col-md-3 checkbox">
+        <%= f.check_box :remember_me %>
+      </div>
+    </div>
     <% end -%>
 
-    <div class="actions">
-      <%= image_submit_tag("btn-sesion.png") %>
+    <div class="row">
+      <div class="col-md-3">
+        
+      </div>
+      <div class="col-md-9">
+        <%= image_submit_tag("btn-sesion.png") %>
+      </div>
     </div>
   <% end %>
 </div>

@@ -1,23 +1,36 @@
 <div class="row">
 	<%= image_tag(@store.image_url, :width => 300, :height => 200) if @store.image.present? %>
 </div>
+
 <div class="row">
-    <% @store.products.each do |product| %>
-  <div class="col-md-4">
-    <div class="container centered">
-      <%= image_tag(product.image_url, :width => 250, :height => 250, class: "center") if product.image.present? %>
-        <h4><%= product.name %></small></h4>
-        <%= form_for :order_item, url: order_items_path, remote: true do |f| %>
-          <h4 class="text-right">Valor unidad: <span style="color: green"><%= number_to_currency product.price %></span></h4>
-          <div class="input-group">
-            <%= f.number_field :quantity, value: 1, class: "form-control", min: 1 %>
-            <div class="input-group-btn">
-              <%= f.hidden_field :product_id, value: product.id %>
-              <%= f.submit "Pedir", class: "btn btn-primary", id: "completeOrder" %>
-            </div>
-          </div>    
-        <% end %>
-    </div>
+  <% @store.products.each do |product| %>
+  <div class="col-md-2">
+    <span class="thumbnail">
+        <%= image_tag(product.image.url, alt: 'Image', class: "product-image", style: "width: 100px; height: 100px;") if product.image? %>
+        <h4 class= "product_name"><%= product.name %></h4>
+        <hr class="line">
+        <div class="row">
+          <div class="col-md-12">
+            <p class="sell_price"><%= number_to_currency(product.price, strip_insignificant_zeros: true)  %></p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <%= form_for :order_item, url: order_items_path, remote: true do |f| %>
+            <%= f.hidden_field :product_id, value: product.id %>
+            <%= f.hidden_field :quantity, value: 1, class: "form input_product", min: 1 %>
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="col-md-12">
+            <%= f.button style: style="width: 50px;height: 40px;padding:0px;display: block;margin: 3px auto; border: none; color: #38133a; background: none;" do %>
+              pedir
+            <%end %>
+          </div>
+          <%end %>
+        </div>
+    </span>
   </div>
   <%end%>
 </div>

@@ -1,13 +1,22 @@
 <%if signed_in? %>
+<div class="container">
 	<% if current_user.active %>
+	<div class="container-welcome">
 		<%= render partial:"/newsletters/list"%>
 		<%= image_tag('Bienvenidos-Mediterraneo.png') %>
+		<hr>
+	</div>
 	<%else %>
+	<div class="container-welcome">
 		<p><h1>Acercate a la administración para que puedas aprovechar esta app.</h1></p>
 		<%= image_tag('Bienvenidos-Mediterraneo.png') %>
+		<hr>
+	</div>
 	<%end %>
 	<%else %>
-		<div class="container">
+		<div class="container-welcome">
 		<%= image_tag('Bienvenidos-Mediterraneo.png')%>	
-	</div>
-<%end %>
+		</div>
+		<hr>
+	<%end %>
+</div>

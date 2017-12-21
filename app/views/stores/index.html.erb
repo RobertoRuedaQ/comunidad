@@ -1,9 +1,11 @@
   <h1>Tiendas para ti</h1>
-  
-  <% @stores.each do |store| %>
-    <%= link_to store_path(store) do %>
-      <%= image_tag(store.image_url, :width => 300, :height => 150) if store.image.present? %>
-    <%end %>
-  <% end %>
+  <div class="container-welcome">
+	  <% @stores.each do |store| %>
+	    <%= link_to store_path(store) do %>
+	      <%= image_tag(store.image_url, :width => 150, :height => 150) if store.image.present? %>
+	      <hr class="line">
+	    <%end %>
+	  <% end %>  	
+  </div>
 
 

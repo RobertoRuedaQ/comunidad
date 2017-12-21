@@ -1,5 +1,8 @@
 <p id="notice"><%= notice %></p>
-
+<p>
+  <strong>Foto:</strong>
+  <%= image_tag(@worker.imagen_url, :width => 80, :height => 80) if @worker.imagen.present? %>
+</p>
 <p>
   <strong>Nombre:</strong>
   <%= @worker.name %>

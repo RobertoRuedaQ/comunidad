@@ -10,34 +10,43 @@
       </ul>
     </div>
   <% end %>
+<div class="row">
+  <div class="col-md-8">
+    <div class="row">
+      <div class="col-md-3"><%= form.label :imagen, t('Foto') %></div>
+      <div class="col-md-6"><%= form.file_field :imagne, id: :worker_imagen%></div>
+    </div>
 
-  <div class="field">
-    <%= form.label :name, t('Nombre') %>
-    <%= form.text_field :name, id: :worker_name, class:"form-control" %>
+    <div class="row">
+      <div class="col-md-3"> <%= form.label :name, t('Nombre') %></div>
+      <div class="col-md-6"><%= form.text_field :name, id: :worker_name %></div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-3"><%= form.label :last_name, t('Apellido') %></div>
+      <div class="col-md-6"><%= form.text_field :last_name, id: :worker_last_name %></div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-3"><%= form.label :ARL %></div>
+      <div class="col-md-6"><%= form.select :ARL,['Positiva', 'Bolivar', 'Aurora', 'Liberty', 'Maphre', 'Colmena', 'Alfa', 'Colpatria', 'Equidad', 'Sura'], include_blank: true %></div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-3"><%= form.label :role, t('Función') %></div>
+      <div class="col-md-6"><%= form.select :role,['Celador', 'Administrativo', 'Aseo'], include_blank: true %></div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-3"><%= form.label :memo %></div>
+      <div class="col-md-6"><%= form.text_area :memo, id: :worker_memo %></div>
+    </div>
+
+
+      <div class="actions">
+        <%= form.submit 'Crear empleado', class: 'btn btn-default' %>
+      </div>
+    <% end %>
+
   </div>
-
-  <div class="field">
-    <%= form.label :last_name, t('Apellido') %>
-    <%= form.text_field :last_name, id: :worker_last_name, class:"form-control" %>
-  </div>
-
-  <div class="field">
-    <%= form.label :ARL %>
-    <%= form.select :ARL,['Positiva', 'Bolivar', 'Aurora', 'Liberty', 'Maphre', 'Colmena', 'Alfa', 'Colpatria', 'Equidad', 'Sura'], include_blank: true %>
-  </div>
-
-
-  <div class="field">
-    <%= form.label :role, t('Función') %>
-    <%= form.select :role,['Celador', 'Administrativo', 'Aseo'], include_blank: true %>
-  </div>
-
-  <div class="field">
-    <%= form.label :memo %>
-    <%= form.text_area :memo, id: :worker_memo, class:"form-control" %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit 'Crear empleado', class: 'btn btn-default' %>
-  </div>
-<% end %>
+</div>

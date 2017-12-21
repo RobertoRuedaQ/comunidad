@@ -12,9 +12,7 @@
 	        box-shadow: 0 8px 6px -6px #999;
 }
 
-.producttitle {
-	padding:5px 0 5px 0;
-}
+
 
 .productprice {
 	border-top:1px solid #dadada;
@@ -24,4 +22,32 @@
 .pricetext {
 	font-size:0.8em;
 	margin-left: 10px;
+}
+
+
+span.thumbnail {
+    border: 1px solid #cccccc !important;
+    border-radius: 10px !important;
+    -webkit-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.16);
+    -moz-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.16);
+    box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.16);
+		padding: 10px 10px 0px 10px;
+		min-height: 240px;
+		margin: 5px 6px;
+}
+
+.product_name{
+  font-size: 11px;
+  color:black;
+  text-align: center;
+  margin-top: 3px !important;
+  margin-bottom: 3px !important;
+}
+
+.sell_price{
+  color: #0092c9;
+  font-weight: bolder;
+  font-size: 16px;
+  margin: 3px auto;
+  text-align: center;
 }
