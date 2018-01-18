@@ -1,5 +1,5 @@
 <% @newsletters.each do |newsletter| %>
-	<h1><%= newsletter.tittle  %></h1>	
+	<h1><%= newsletter.tittle  %> - <%= newsletter.date %></h1>	
 	<%= image_tag(newsletter.file_url, :width => 850, :height => 1100) if newsletter.file.present? %>
 	<hr class="line">
 <% end %>

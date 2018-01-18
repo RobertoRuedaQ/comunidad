@@ -23,6 +23,9 @@
             <h4 class="product-info">Tel: <span><%= advertisement.user.cellphone %></span></h4>
             <h4 class="product-info">Email: <span><%= advertisement.user.email %></span></h4>
             <p class="product-description"><%= advertisement.description %></p>
+            <% if advertisement.user == current_user %>
+              <%=button_to 'Borrar', advertisement_path(advertisement), method: :delete%>
+              <%end %>
           </div>
         </div>
         <%end %>

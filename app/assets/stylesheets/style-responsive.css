@@ -277,9 +277,11 @@
     }
 
     .wrapper img{
-      width: 85%;
+      width: auto;
+      height: auto;
+      max-width: 100%;
       position: relative;
-      left: 25px;
+      left: 40px;
       margin-left: 0;
     }
 
